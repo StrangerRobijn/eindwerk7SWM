@@ -2,7 +2,6 @@ $btn-padding-x:5%;
 $btn-padding-y:.7%;
 $btn-border-radius: 50px 50px 50px 50px   ;
 $primary: white;
-
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
@@ -21,7 +20,7 @@ $primary: white;
 .clearfix:before, .clearfix:after { content: " "; display: table;  }
 .clearfix:after { clear: both;  }
 .wrapper{  margin: 0 auto; width: 1920px; max-width: 100%; }
-html {font-size: 13px;} 
+html {font-size: 14px;} 
 img{max-width: 100%;}
 header {background-color:#EBEBEB;} 
 header img {   padding: 1%;  display: block; margin-left: auto;margin-right: auto; } 
