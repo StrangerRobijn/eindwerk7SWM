@@ -1,3 +1,4 @@
+$btn-padding-x:15%;
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
@@ -12,6 +13,13 @@
 @import "node_modules/bootstrap/scss/navbar";
 @import "node_modules/bootstrap/scss/progress";
 @import "node_modules/bootstrap/scss/popover";
-
-html {font-size: 13px } 
+*{ box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: " "; display: table;  }
+.clearfix:after { clear: both;  }
+.wrapper{  margin: 0 auto; width: 1920px; max-width: 100%; }
+html {font-size: 13px;} 
+img{max-width: 100%;}
+header {background-color:#EBEBEB;} 
+header img {   padding: 2%;  display: block; margin-left: auto;margin-right: auto; } 
+.section1 img{ display: block; margin-left: auto;margin-right: auto;}
 
