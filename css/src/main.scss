@@ -28,7 +28,9 @@ $third:rgba(238, 55, 55, 0.966);
 .clearfix:before, .clearfix:after { content: " "; display: table;  }
 .clearfix:after { clear: both;  }
 .wrapper{  margin: 0 auto; width: 1920px; max-width: 100%;}
-html {font-size: 14px;overflow-x: hidden;} 
+
+html { overflow: scroll; overflow-x: hidden;font-size: 14px;}
+::-webkit-scrollbar { width: 0px;  /* remove scrollbar space */ background: transparent;  /* optional: just make scrollbar invisible */}
 img{max-width: 100%;}
 header {background-color:#EBEBEB;} 
 header img {   padding: 1%;  display: block; margin-left: auto;margin-right: auto; } 
@@ -369,6 +371,7 @@ NAVIGATION
       padding: 3em 0 0;
       margin: 1.4em auto;
       border-bottom: none;
+      text-decoration: none;
       font-size: 1.2rem;
       color: white;
     }
