@@ -17,6 +17,12 @@ $secondary: rgba(228, 228, 228, 0.966);
 @import "node_modules/bootstrap/scss/navbar";
 @import "node_modules/bootstrap/scss/progress";
 @import "node_modules/bootstrap/scss/popover";
+@import 'node_modules/bootstrap/scss/variables'; // colors, fonts etc...
+
+@import 'node_modules/bootstrap/scss/mixins'; // custom mixins
+
+
+
 *{ box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: " "; display: table;  }
 .clearfix:after { clear: both;  }
@@ -42,7 +48,6 @@ header img {   padding: 1%;  display: block; margin-left: auto;margin-right: aut
 #section4 .color button{position: relative; margin-left:22%;margin-right: auto;margin-top: 50%;}
 #section4 .colorP button{position: relative; margin-left:22%;margin-right: auto;margin-top: 50%;}
 #section4 .colorY button{position: relative; margin-left:22%;margin-right: auto;margin-top: 50%;}
-
 
 
 
@@ -604,4 +609,3 @@ NAVIGATION
 
 
 
-  

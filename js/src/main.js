@@ -90,6 +90,3 @@ $('html').mousemove(function(e){
     
 });
 
-$(document).ready(function(){
-    $('#scene').parallax();
-});
