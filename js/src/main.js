@@ -1,14 +1,6 @@
 
 $('#myModal').modal() 
 
-$('.btnShoppingCart').popover({
-    container: 'body',
-    html: true,
-    content: function () {
-        var clone = $( $(this).data('contentid') ).clone(true).removeClass('d-none');
-        return clone;
-    }
-})
 
 jQuery(document).ready(function($){
 	var	scrolling = false;
@@ -79,7 +71,7 @@ $('html').mousemove(function(e){
     var newx = x - wx/2;
     var newy = y - wy/2;
     
-    $('span').text(newx + ", " + newy);
+
     
     $('#wrapper div').each(function(){
         var speed = $(this).attr('data-speed');
@@ -89,4 +81,21 @@ $('html').mousemove(function(e){
     });
     
 });
+
+
+/*Slide*/
+$(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 750);
+          return false;
+        }
+      }
+    });
+  });
 
