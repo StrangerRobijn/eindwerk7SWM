@@ -35,23 +35,34 @@
 
 <article>
 
-<div class="section0">
+        <nav class="cd-vertical-nav">
+                <ul>
+                    <li><a href="#section1" ><span class="label">Intro</span></a></li>
+                    <li><a href="#section2"><span class="label">Film</span></a></li>
+                    <li><a href="#section3"><span class="label">Detail</span></a></li>
+                    <li><a href="#section4"><span class="label">Kopen</span></a></li>
+                </ul>
+            </nav><!-- .cd-vertical-nav -->
+            <button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+
+
+<div id="section0">
         <a href="#"><button class="btn btn-secondary center-block"> Nu kopen</button></a>
 </div>
 
-  <div class="section1">
+  <div id="section1">
       <img src="img/trio2.png">
       <a href="#section4"><button class="btn btn-primary center-block"> Zie meer</button></a>
       <div id="circle"></div>
   </div>
 
-  <div class="section2">         
+  <div id="section2">         
       <div class="embed-responsive embed-responsive-16by9">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
    </div>
   </div>
 
-   <div class="section3">         
+   <div id="section3">         
       <div class="container">
           <div class="row">
 
@@ -140,5 +151,7 @@
 
 </div>
           <script src="js/dist/main.min.js"></script>
+          <script src="js/dist/modernizr.js"></script> <!-- Modernizr -->
+          <script src="js/jquery-2.1.4.js"></script>
 </body>
 </html>
