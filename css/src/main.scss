@@ -27,7 +27,7 @@ $third:rgba(238, 55, 55, 0.966);
 *{ box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: " "; display: table;  }
 .clearfix:after { clear: both;  }
-.wrapper{  margin: 0 auto; width: 1920px; max-width: 100%;}
+.wrapper{  margin: 0 auto; width: 1080px; max-width: 100%;}
 
 html { overflow: scroll; overflow-x: hidden;font-size: 14px;}
 ::-webkit-scrollbar { width: 0px;  /* remove scrollbar space */ background: transparent;  /* optional: just make scrollbar invisible */}
