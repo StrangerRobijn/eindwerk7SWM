@@ -2,6 +2,7 @@ $btn-padding-x:5%;
 $btn-padding-y:.7%;
 $btn-border-radius: 50px 50px 50px 50px   ;
 $primary: white;
+$secondary: rgba(228, 228, 228, 0.966);
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
@@ -24,9 +25,13 @@ html {font-size: 14px;}
 img{max-width: 100%;}
 header {background-color:#EBEBEB;} 
 header img {   padding: 1%;  display: block; margin-left: auto;margin-right: auto; } 
+.section0 button{display: block; margin-left:75%;margin-right: auto; margin-top: 1%;position: absolute;font-size: 1rem;}
 .section1{margin-top: 2%;}
 .section1 img{ display: block; margin-left: auto;margin-right: auto;}
 .section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -3.5%;position:relative;font-size: 1.5rem;}
 #circle {display: block; margin-left: auto;margin-right: auto; margin-top: -33%; width: 450px;height: 450px;background:#ECEF82;-moz-border-radius: 450px;-webkit-border-radius: 450px;border-radius: 697px; position: relative; z-index: -1;}
 .section2{margin-top: 3.5%;}
-.section3{margin-top: 4%;}
+.section3{margin-top: 4%;margin-left: 2%;}
+.section3 img{margin-bottom: 5%;}
+.section3 .gif{position: relative; margin-left:auto;margin-right: auto;}
+.section3 .col{position: relative; margin-left:auto;margin-right: auto;margin-top: 14%;}
