@@ -28,7 +28,6 @@ $third:rgba(238, 55, 55, 0.966);
 .clearfix:before, .clearfix:after { content: " "; display: table;  }
 .clearfix:after { clear: both;  }
 .wrapper{  margin: 0 auto; width: 1080px; max-width: 100%;}
-
 html { overflow: scroll; overflow-x: hidden;font-size: 14px;}
 ::-webkit-scrollbar { width: 0px;  /* remove scrollbar space */ background: transparent;  /* optional: just make scrollbar invisible */}
 img{max-width: 100%;}
@@ -48,9 +47,10 @@ header img {   padding: 1%;  display: block; margin-left: auto;margin-right: aut
 #section4 .color{border-radius: 0px 50px; background-color:#FFDEDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
 #section4 .colorP{border-radius: 0px 50px; background-color:#DEE4FF; height: 480px; width:500px;margin-right: 50%; padding: 6%}
 #section4 .colorY{border-radius: 0px 50px; background-color:#FEFFDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
-#section4 .color button{display:block; position: absolute; margin-left:22%;margin-right: auto;margin-top: 50%;}
-#section4 .colorP button{display:block; position: absolute; margin-left:22%;margin-right: auto;margin-top: 50%;}
-
+#section4 .color button{display:block; position: relative; margin-left:22%;margin-right: auto;margin-top: 35%;}
+#section4 .colorP button{display:block; position: relative; margin-left:22%;margin-right: auto;margin-top: 35%;}
+#section4 ul{margin-left: 8%; }
+#section4 li{padding-top: 3%;}
 #section4 .colorY button{display:block; position: absolute; margin-left:22%;margin-right: auto;margin-top: 50%;}
 
 
