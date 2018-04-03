@@ -31,9 +31,8 @@ $third:rgba(238, 55, 55, 0.966);
 html { overflow: scroll; overflow-x: hidden;font-size: 14px;}
 ::-webkit-scrollbar { width: 0px;  /* remove scrollbar space */ background: transparent;  /* optional: just make scrollbar invisible */}
 img{max-width: 100%;}
-header {background-color:#EBEBEB;} 
 header img {   padding: 1%;  display: block; margin-left: auto;margin-right: auto; } 
-#section0 button{display: block; margin-left:64%;margin-right: auto; margin-top: 1%;position: absolute;font-size: 1rem;}
+#section0 button{display: block; margin-left:64%;margin-right: auto; margin-top: -8%;position: absolute;font-size: 1rem;}
 #section1{margin-top: 2%;}
 #section1 img{ display: block; margin-left: auto;margin-right: auto;}
 #section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -3.5%;position:relative;font-size: 1.5rem;}
@@ -221,7 +220,7 @@ NAVIGATION
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #3a2c41;
+    background-color: #c01010;
     border-radius: inherit;
   }
   .cd-nav-trigger span::before {
@@ -395,7 +394,7 @@ NAVIGATION
       height: 32px;
       width: 32px;
       border-radius: 50%;
-      background: #eaf2e3;
+      background: rgba(201, 57, 57, 0.8);
       -webkit-transform: translateX(-50%) scale(0.25);
       -moz-transform: translateX(-50%) scale(0.25);
       -ms-transform: translateX(-50%) scale(0.25);
@@ -411,6 +410,7 @@ NAVIGATION
       top: 8px;
       height: 16px;
       width: 16px;
+      
       background: url(../img/cd-nav-icons.svg) no-repeat;
       -webkit-transform: translateX(-50%) scale(0);
       -moz-transform: translateX(-50%) scale(0);
@@ -422,7 +422,7 @@ NAVIGATION
       transition: transform 0.4s 0s, opacity 0.1s 0.3s;
     }
     .cd-vertical-nav a.active::before, .no-touch .cd-vertical-nav a:hover::before {
-      background-color: #cdd0f88a;
+      background-color: white;
     }
     .cd-vertical-nav li:first-of-type a::after {
       /* change icon using image sprites */
