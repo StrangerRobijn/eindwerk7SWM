@@ -28,8 +28,11 @@ $third:rgba(238, 55, 55, 0.966);
 .clearfix:before, .clearfix:after { content: " "; display: table;  }
 .clearfix:after { clear: both;  }
 .wrapper{  margin: 0 auto; width: 1080px; max-width: 100%;}
-html { overflow: scroll; overflow-x: hidden;font-size: 14px;}
+html { overflow: scroll; overflow-x: hidden;font-size: 14px; }
+body{font-family: 'Ubuntu', sans-serif;}
 ::-webkit-scrollbar { width: 0px;  /* remove scrollbar space */ background: transparent;  /* optional: just make scrollbar invisible */}
+::selection {background: #ffb7b7; /* WebKit/Blink Browsers */}
+::-moz-selection {background: #ffb7b7; /* Gecko Browsers */}
 img{max-width: 100%;}
 header img {   padding: 1%;  display: block; margin-left: auto;margin-right: auto; } 
 #section0 button{display: block; margin-left:auto;margin-right: auto; margin-top: -8%;position: absolute;font-size: 1rem;}
@@ -69,7 +72,7 @@ FOOTER
 .footer #button{
 	width:20px;
 	height:20px;
-	border: rgba(201, 57, 57, 0.8) 12px solid; 
+	border: rgba(201, 57, 57, 0.8) 17px solid; 
 	border-radius:20px;
 	margin:0 auto;
 	position:relative;
