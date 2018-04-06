@@ -70,17 +70,19 @@ FOOTER
 
 -------------------------------- */
 .footer #button{
-	width:20px;
-	height:20px;
-	border: rgba(201, 57, 57, 0.8) 17px solid; 
+	width:150px;
+	height:5px;
+	border: rgba(201, 57, 57, 0.8) 5px solid; 
 	border-radius:20px;
-	margin:0 auto;
+  margin:0 auto;
+  margin-top: 1%;
 	position:relative;
 	-webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
     -ms-transition: all 1s ease;
     transition: all 1s ease;
+  
 }
 .footer #button:hover{
 	width:35px;
@@ -342,7 +344,7 @@ NAVIGATION
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(241, 209, 25, 0.7);
+      background: #F6EE7D;
       -webkit-transform: translateX(100%);
       -moz-transform: translateX(100%);
       -ms-transform: translateX(100%);
@@ -397,7 +399,7 @@ NAVIGATION
       height: 32px;
       width: 32px;
       border-radius: 50%;
-      background: rgba(79, 57, 201, 0.8);
+      background:#828181;
       -webkit-transform: translateX(-50%) scale(0.25);
       -moz-transform: translateX(-50%) scale(0.25);
       -ms-transform: translateX(-50%) scale(0.25);
