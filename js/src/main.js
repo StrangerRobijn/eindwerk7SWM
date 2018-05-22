@@ -99,3 +99,33 @@ $(function() {
     });
   });
 
+
+  //form
+  function validate() {
+
+
+    var name = document.querySelector('input[name="name"]').value;
+
+    if (name==null || name==""){
+        alert("Geef een naam in");
+        return false;
+    }
+
+    
+    var subject = document.querySelector('input[name="subject"]').value;
+
+    if (name==null || name==""){
+        alert("Geef een onderwerp in");
+        return false;
+    }
+ 
+    var email = document.querySelector('input[name="email"]').value;
+    var atpos = email.indexOf("@");
+    var dotpos = email.lastIndexOf(".");
+
+    if(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length){
+        alert("Foutief email adres");
+        return false;
+    }
+    return true;
+}

@@ -157,14 +157,17 @@
                        </div>
         </div>
 
+
+         <div id="section5">
+
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
                 <h1>Form</h1>
                 <form class="cf">
                   <div class="half left cf">
-                    <input type="text" id="input-name" name="name" placeholder="Name">
-                    <input type="email" id="input-email" name="email" placeholder="Email address">
-                    <input type="text" id="input-subject" name="subject" placeholder="Subject">
+                    <input type="text" id="input-name" name="name" placeholder="Name" required>
+                    <input type="email" id="input-email" name="email" placeholder="Email address" required>
+                    <input type="text" id="input-subject" name="subject" placeholder="Subject" required>
                   </div>
                   <div class="half right cf">
                     <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
@@ -174,10 +177,10 @@
                 </form>
 
             </form>
-
+        </div>
 <?php
 // validatie
-if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST[subject'])){
+if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
     $_POST['name'] = htmlspecialchars($_POST['name']);
     $_POST['email'] = htmlspecialchars($_POST['email']);
