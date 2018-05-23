@@ -1,3 +1,79 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+
+ <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+    <?php endif ?>
+
+<?php
+// validatie
+if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
+
+    $_POST['name'] = htmlspecialchars($_POST['name']);
+    $_POST['email'] = htmlspecialchars($_POST['email']);
+    $_POST['subject'] = htmlspecialchars($_POST['subject']);
+
+
+    $to = $_POST["email"];
+    $subject = "contact via site";
+
+    $message = "
+    <html>
+    <head>
+    <title>Contact via site</title>
+    </head>
+    <body>
+    <p>Wij hebben je aanvraag goed ontvangen!</p>
+    <table>
+    <tr>
+    <th>Naam</th>
+    <th>E-mail</th>
+    <th>Bericht</th>
+    </tr>
+    <tr>
+    <td>".$_POST["name"]."</td>
+    <td>".$_POST["email"]."</td>
+    <td>".$_POST["subject"]."</td>
+    </tr>
+    </table>
+    </body>
+    </html>
+    ";
+
+    // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+    // More headers
+    $headers .= 'From: <robindekesel@gmail.com>' . "\r\n";
+    $headers .= 'Cc: test@visocloud.org' . "\r\n";
+
+    if(mail($to,$subject,$message,$headers)){
+        echo "<p>Bericht verstuurd</p>";
+      } else {
+        echo "<p>Fout bij het versturen van e-mail</p>";
+      }
+
+}
+ 
+?>
+  
+
+
+
+
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -178,59 +254,16 @@
 
             </form>
         </div>
-<?php
-// validatie
-if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
-
-    $_POST['name'] = htmlspecialchars($_POST['name']);
-    $_POST['email'] = htmlspecialchars($_POST['email']);
-    $_POST['subject'] = htmlspecialchars($_POST['subject']);
 
 
-    $to = $_POST["email"];
-    $subject = "contact via site";
+        <form method="post" action="send_script.php">
+  Name: <input type="text" name="name" > <br />
+  email: <input type="email" name="email" > <br />
+  Subject: <input type="text" name="subject" > <br />
+  Message: <textarea name="msg"></textarea>
+  <button type="submit" name="send_message_btn">Send</button>
+</form>
 
-    $message = "
-    <html>
-    <head>
-    <title>Contact via site</title>
-    </head>
-    <body>
-    <p>This email contains HTML Tags!</p>
-    <table>
-    <tr>
-    <th>Voornaam</th>
-    <th>E-mail</th>
-    <th>Bericht</th>
-    </tr>
-    <tr>
-    <td>".$_POST["name"]."</td>
-    <td>".$_POST["email"]."</td>
-    <td>".$_POST["subject"]."</td>
-    </tr>
-    </table>
-    </body>
-    </html>
-    ";
-
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-    // More headers
-    $headers .= 'From: <dekesels@visocloud.org>' . "\r\n";
-    $headers .= 'Cc: test@visocloud.org' . "\r\n";
-
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p>Bericht verstuurd</p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
-
-}
- 
-?>
-  
     </div>
 
 </article>

@@ -63,7 +63,7 @@ form {
   margin: 20px auto;
  
  input, textarea {
-    border:0; outline:0;
+    border:3px; color: black; outline:0;
     padding: 1em;
     @include border-radius(8px);
     display: block;
