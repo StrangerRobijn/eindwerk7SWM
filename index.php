@@ -1,4 +1,10 @@
 <?php 
+include("db_conn.php");
+
+
+$query = "SELECT * FROM users";
+$result = mysqli_query($db, $query);
+
   session_start(); 
 
   if (!isset($_SESSION['username'])) {
@@ -291,3 +297,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
           
 </body>
 </html>
+
+<?php
+mysqli_close($db);
+?>

@@ -1,4 +1,7 @@
 <?php
+
+include("db_conn.php");
+
 session_start();
 
 // initializing variables
