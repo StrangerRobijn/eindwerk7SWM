@@ -36,7 +36,7 @@ body{font-family: 'Ubuntu', sans-serif;}
 img{max-width: 100%;}
 #section0 {padding:1%;  position:absolute;z-index: 9999; width: 20%; margin: 0px auto; padding: 20px; background:rgb(242, 242, 242);border-radius: 10px 10px 10px 10px;}
 #section0 img{margin-bottom: 5%;}
-#section1{margin-top: 2%; margin-bottom: 5%;}
+#section1{margin-top: 2%; }
 #section1 img{ display: block; margin-left: auto;margin-right: auto;}
 #section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -5%;position:relative;font-size: 1.5rem;}
 #section2{margin-top: 3.5%;}
@@ -44,17 +44,74 @@ img{max-width: 100%;}
 #section3 img{margin-bottom: 5%;}
 #section3 .gif{position: relative; margin-left:auto;margin-right: auto; ;}
 #section3 .col{position: relative; margin-left:auto;margin-right: auto;margin-top: 14%;}
-#section4{position: relative; margin-left:10%;margin-right: auto;}
-#section4 .color{border-radius: 20px 20px; background-color:#FFDEDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
-#section4 .colorP{border-radius: 20px 20px; background-color:#DEE4FF; height: 480px; width:500px;margin-right: 50%; padding: 6%}
-#section4 .colorY{border-radius: 20px 20px; background-color:#FEFFDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
-#section4 .color button{display:block; position: relative; margin-left:22%;margin-right: auto;margin-top: 35%;}
-#section4 .colorP button{display:block; position: relative; margin-left:22%;margin-right: auto;margin-top: 35%;}
-#section4 ul{margin-left: 8%;}
-#section4 li{padding-top: 3%;}
-#section4 .colorY button{display:block; position: absolute; margin-left:22%;margin-right: auto;margin-top: 50%;}
+#section4{position: relative;}
 #section5{position: relative; margin-top:20%;margin-right: auto;}
 #section5 button{position: relative; margin-top:20%;margin-right: auto;}
+
+
+.hideme
+{
+    opacity:0;
+}
+
+.products {
+  background:rgb(242, 242, 242);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.table {
+margin: 0px auto;
+float: none;
+}
+.row {
+margin: 0px auto;
+float: none;
+}
+.centered{
+float: none;
+margin: 0 auto;
+}
+.button {
+background: #6394F8;
+color:white;
+text-align: center;
+padding: 12px;
+text-decoration: none;
+display: block;
+border-radius: 3px;
+font-size: 16px;
+margin: 25px 0 15px 0;
+}
+.button:visited {
+  text-decoration: none;
+  color: white;
+}
+.button:hover {
+background: #7fa9ff;
+text-decoration: none;
+color: white;
+}
+.button:active {
+text-decoration: none;
+color: white;
+}
+.btn-danger {
+  font-size: 12px;
+  padding: 3px;
+}
+.btn-danger:hover {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+h3 {
+  margin-top: 0px;
+}
 
 
 form {

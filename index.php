@@ -21,6 +21,77 @@ $result = mysqli_query($db, $query);
 
 
 <?php
+
+$product_ids = array();
+//session_destroy();
+
+//check if Add to Cart button has been submitted
+if(filter_input(INPUT_POST, 'add_to_cart')){
+    if(isset($_SESSION['shopping_cart'])){
+        
+        //keep track of how mnay products are in the shopping cart
+        $count = count($_SESSION['shopping_cart']);
+        
+        //create sequantial array for matching array keys to products id's
+        $product_ids = array_column($_SESSION['shopping_cart'], 'id');
+        
+        if (!in_array(filter_input(INPUT_GET, 'id'), $product_ids)){
+        $_SESSION['shopping_cart'][$count] = array
+            (
+                'id' => filter_input(INPUT_GET, 'id'),
+                'name' => filter_input(INPUT_POST, 'name'),
+                'price' => filter_input(INPUT_POST, 'price'),
+                'quantity' => filter_input(INPUT_POST, 'quantity')
+            );   
+        }
+        else { //product already exists, increase quantity
+            //match array key to id of the product being added to the cart
+            for ($i = 0; $i < count($product_ids); $i++){
+                if ($product_ids[$i] == filter_input(INPUT_GET, 'id')){
+                    //add item quantity to the existing product in the array
+                    $_SESSION['shopping_cart'][$i]['quantity'] += filter_input(INPUT_POST, 'quantity');
+                }
+            }
+        }
+        
+    }
+    else { //if shopping cart doesn't exist, create first product with array key 0
+        //create array using submitted form data, start from key 0 and fill it with values
+        $_SESSION['shopping_cart'][0] = array
+        (
+            'id' => filter_input(INPUT_GET, 'id'),
+            'name' => filter_input(INPUT_POST, 'name'),
+            'price' => filter_input(INPUT_POST, 'price'),
+            'quantity' => filter_input(INPUT_POST, 'quantity')
+        );
+    }
+}
+
+if(filter_input(INPUT_GET, 'action') == 'delete'){
+    //loop through all products in the shopping cart until it matches with GET id variable
+    foreach($_SESSION['shopping_cart'] as $key => $product){
+        if ($product['id'] == filter_input(INPUT_GET, 'id')){
+            //remove product from the shopping cart when it matches with the GET id
+            unset($_SESSION['shopping_cart'][$key]);
+        }
+    }
+    //reset session array keys so they match with $product_ids numeric array
+    $_SESSION['shopping_cart'] = array_values($_SESSION['shopping_cart']);
+}
+
+//pre_r($_SESSION);
+
+function pre_r($array){
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+}
+?>
+
+
+
+
+<?php
 // validatie
 if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
@@ -155,94 +226,149 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
         <iframe width="560" height="315" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
    </div>
   </div>
+     
 
-   <div id="section3">         
+
+
+
+
+   <div id="section3">     
+   
       <div class="container">
           <div class="row">
 
             <div class="col">
+            <div class="hideme">    
               <img src="img/leaf.png">
                 <p>Blaster is de nieuwe norm op het gebied van natuurlijke smaken en aromas:
                 alle belangrijke smaken komen van de vrucht zelf zonder bijgevoegde suikers of smaakstoffen.</p> <br>
                 <br>
+        </div>
+        <div class="hideme">    
                 <img src="img/energie.png">
                <p> Ook op het gebied van energie is Blaster de concurrentie al ver vooruit: met onze eigen aangepaste cafeïne hebben we geen suikers nodig om de gebruiker meer energie te geven.</p> 
             </div>
+        </div>
 
             <div class="col-sm">
                 <img class="gif" src="vid/resize.gif" alt="Blaster Aardbei">
             </div>
 
             <div class="col">
+            <div class="hideme">    
                 <img src="img/reuse.png">
                 <p>De flesjes zijn ontworpen met millieuvriendelijkheid in het achterhoofd, dus 0% plastic in de flesjes, zo is Moeder Natuur tevreden !</p><br>
+        </div>
                 <br>
+                <div class="hideme">    
                 <img src="img/heart.png">
                 <p>Blaster is ook heel gezond, het bevat geen schadelijke stoffen die uw  lichaam kunnen schaden, bovendien is Blaster alcohol vrij !</p>
+        </div>
             </div>
           </div>
         </div>
-
-        <div id="section4">
-            <div class="row">
-             <div class="col">
-                  <img src="img/aardbei_crop.png">
-                </div>
-             <div class="col">
-                 <div class="color">      
-                 <p> BLASTER Aardbei </p>              
-                    <p>De bestverkopende smaak in een nieuw jasje, koop snel de jouwe voordat ze allemaal zijn uitverkocht !</p> 
-                    <ul>
-                        <li>Goede bron aan <b>vitaminen</b>.</li>
-                        <li>Alleen <b>de beste aardbeien</b> komen in onze productie terecht.</li>
-                        <li>#1 <b>beste verkopende</b> bio energie drank op de markt.</li>
-                        <li>Niet tevreden ? Geld terug !</li>
-                    </ul>
-                    <a href="#"><button class="btn btn-primary center-block"> In winkelmand steken</button></a>                
-                </div>
-                </div>
-            </div>
-
-            
-            <div class="row">
-                    <div class="col">
-                         <img src="img/bosbes_crop.png">
-                       </div>
-                    <div class="col">
-                        <div class="colorP">
-                           <p> BLASTER bosbes <br>
-                           De bestverkopende smaak in een nieuw jasje, koop snel de jouwe voordat ze allemaal zijn uitverkocht !</p> 
-                           <ul>
-                               <li>Goede bron aan <b>vitaminen</b>.</li>
-                               <li>Alleen <b>de beste bosbessen</b> komen in onze productie terecht.</li>
-                               <li>#1 <b>beste verkopende</b> bio energie drank op de markt.</li>
-                               <li>Niet tevreden ? Geld terug !</li>
-                           </ul>
-                           <a href="#"><button class="btn btn-primary center-block"> In winkelmand steken</button></a>                
-                       </div>
-                       </div>
-                   </div>
-       
-
-                   <div class="row">
-                        <div class="col">
-                             <img src="img/citroen_crop.png">
-                           </div>
-                        <div class="col">
-                                <div class="colorY">
-                                <p>BLASTER Citroen <br>
-                                De zure maar verfrissende smaak in een nieuw jasje, koop snel de jouwe voordat ze allemaal zijn uitverkocht !</p>
-                                <ul>
-                                    <li>Goede bron aan <b>vitaminen</b>.</li>
-                                    <li>Alleen <b>de beste citroenen</b> komen in onze productie terecht.</li>
-                                    <li>#1 <b>beste verkopende</b> bio energie drank op de markt.</li>
-                                    <li>Niet tevreden ? Geld terug !</li>
-                                </ul>
-                                <a href="#"><button class="btn btn-primary center-block"> In winkelmand steken</button></a>                
-                            </div>
-                           </div>
-                       </div>
         </div>
+
+
+
+    <div id="section4">
+
+
+        <div class="container">
+        <?php
+        $connect = mysqli_connect('localhost', 'root', '', 'cart');
+        $query = 'SELECT * FROM products ORDER by id ASC';
+
+        $result = mysqli_query($connect, $query);
+
+        if ($result):
+            if(mysqli_num_rows($result)>0):
+                while($product = mysqli_fetch_assoc($result)):
+                   ?>
+
+                    <div class="container">
+                        <form method="post" action="index.php?action=add&id=<?php echo $product ['id']; ?>">
+                        <div class="products">
+                            <img src="<?php echo $product['image']; ?>" class="img-responsive" />
+                            <h4 class="text-info"><?php echo $product['name']; ?></h4>
+                            <h4>$ <?php echo $product['price']; ?> </h4>
+                            <input type="text" name="quantity" class="form-control" value="1" />
+                            <input type="hidden" name="name" value="<?php echo $product ['name']; ?>" />
+                            <input type="hidden" name="price" value="<?php echo $product ['price']; ?>" />
+                            <input type="submit" name="add_to_cart" class="btn btn-info" value="Kopen" />
+
+                         </div>
+                     </form>
+                </div>
+
+                   <?php
+                   endwhile;
+                endif;
+            endif;
+
+    ?>
+
+         <div style="clear:both"></div>  
+        <br />  
+        <div class="table-responsive">  
+        <table class="table">  
+            <tr><th colspan="5"><h3>Uw producten</h3></th></tr>   
+        <tr>  
+             <th width="40%">Soort</th>  
+             <th width="10%">Hoeveelheid</th>  
+             <th width="20%">Prijs</th>  
+             <th width="15%">Totaal</th>  
+             <th width="5%">Action</th>  
+        </tr>  
+        <?php   
+        if(!empty($_SESSION['shopping_cart'])):  
+            
+             $total = 0;  
+        
+             foreach($_SESSION['shopping_cart'] as $key => $product): 
+        ?>  
+        <tr>  
+           <td><?php echo $product['name']; ?></td>  
+           <td><?php echo $product['quantity']; ?></td>  
+           <td>$ <?php echo $product['price']; ?></td>  
+           <td>$ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
+           <td>
+               <a href="index.php?action=delete&id=<?php echo $product['id']; ?>">
+                    <div class="btn-danger">Remove</div>
+               </a>
+           </td>  
+        </tr>  
+        <?php  
+                  $total = $total + ($product['quantity'] * $product['price']);  
+             endforeach;  
+        ?>  
+        <tr>  
+             <td colspan="3" align="right">Total</td>  
+             <td align="right">$ <?php echo number_format($total, 2); ?></td>  
+             <td></td>  
+        </tr>  
+        <tr>
+            <!-- Show checkout button only if the shopping cart is not empty -->
+            <td colspan="5">
+             <?php 
+                if (isset($_SESSION['shopping_cart'])):
+                if (count($_SESSION['shopping_cart']) > 0):
+             ?>
+                <a href="#" class="button">Betalen</a>
+             <?php endif; endif; ?>
+            </td>
+        </tr>
+        <?php  
+        endif;
+        ?>  
+        </table>  
+    </div>
+    </div>
+
+    </div>
+
+
+
 
 
          <div id="section5">
@@ -266,14 +392,6 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
             </form>
         </div>
 
-
-        <form method="post" action="send_script.php">
-  Name: <input type="text" name="name" > <br />
-  email: <input type="email" name="email" > <br />
-  Subject: <input type="text" name="subject" > <br />
-  Message: <textarea name="msg"></textarea>
-  <button type="submit" name="send_message_btn">Send</button>
-</form>
 
     </div>
 
