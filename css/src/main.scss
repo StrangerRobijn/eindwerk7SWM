@@ -34,9 +34,9 @@ body{font-family: 'Ubuntu', sans-serif;}
 ::selection {background: #ffb7b7; /* WebKit/Blink Browsers */}
 ::-moz-selection {background: #ffb7b7; /* Gecko Browsers */}
 img{max-width: 100%;}
-header img {   padding: 1%;  display: block; margin-left: auto;margin-right: auto; } 
-#section0 button{display: block; margin-left:auto;margin-right: auto; margin-top: -8%;position: absolute;font-size: 1rem;}
-#section1{margin-top: 2%;}
+#section0 {padding:1%;  position:absolute;z-index: 9999; width: 20%; margin: 0px auto; padding: 20px; background:rgb(242, 242, 242);border-radius: 10px 10px 10px 10px;}
+#section0 img{margin-bottom: 5%;}
+#section1{margin-top: 2%; margin-bottom: 5%;}
 #section1 img{ display: block; margin-left: auto;margin-right: auto;}
 #section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -5%;position:relative;font-size: 1.5rem;}
 #section2{margin-top: 3.5%;}
@@ -45,9 +45,9 @@ header img {   padding: 1%;  display: block; margin-left: auto;margin-right: aut
 #section3 .gif{position: relative; margin-left:auto;margin-right: auto; ;}
 #section3 .col{position: relative; margin-left:auto;margin-right: auto;margin-top: 14%;}
 #section4{position: relative; margin-left:10%;margin-right: auto;}
-#section4 .color{border-radius: 0px 50px; background-color:#FFDEDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
-#section4 .colorP{border-radius: 0px 50px; background-color:#DEE4FF; height: 480px; width:500px;margin-right: 50%; padding: 6%}
-#section4 .colorY{border-radius: 0px 50px; background-color:#FEFFDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
+#section4 .color{border-radius: 20px 20px; background-color:#FFDEDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
+#section4 .colorP{border-radius: 20px 20px; background-color:#DEE4FF; height: 480px; width:500px;margin-right: 50%; padding: 6%}
+#section4 .colorY{border-radius: 20px 20px; background-color:#FEFFDE; height: 480px; width:500px;margin-right: 50%; padding: 6%}
 #section4 .color button{display:block; position: relative; margin-left:22%;margin-right: auto;margin-top: 35%;}
 #section4 .colorP button{display:block; position: relative; margin-left:22%;margin-right: auto;margin-top: 35%;}
 #section4 ul{margin-left: 8%;}
@@ -63,7 +63,7 @@ form {
   margin: 20px auto;
  
  input, textarea {
-    border:3px; color: black; outline:0;
+    border:0; outline:0;
     padding: 1em;
     @include border-radius(8px);
     display: block;

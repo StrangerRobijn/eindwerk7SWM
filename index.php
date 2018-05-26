@@ -18,10 +18,7 @@ $result = mysqli_query($db, $query);
   }
 ?>
 
- <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
+
 
 <?php
 // validatie
@@ -113,29 +110,36 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
 <div class="wrapper">
 
-<div id="header">
-<header>
-    <img src="img/standaard_logo_crop.png">
-</header>
-</div>
 
 <article>
 
 
         <nav class="cd-vertical-nav">
                 <ul>
-                    <li><a href="#header" ><span class="label">Intro</span></a></li>
-                    <li><a href="#section2"><span class="label">Film</span></a></li>
-                    <li><a href="#section3"><span class="label">Detail</span></a></li>
+                    <li><a href="#section1" ><span class="label">Begin</span></a></li>
+                    <li><a href="#section2"><span class="label">Video</span></a></li>
+                    <li><a href="#section3"><span class="label">Het merk</span></a></li>
                     <li><a href="#section4"><span class="label">Kopen</span></a></li>
                 </ul>
             </nav><!-- .cd-vertical-nav -->
             <button class="cd-nav-trigger cd-image-replace"><span aria-hidden="true"></span></button>
 
+   <div id="section0">
+  
+    <img src="img/standaard_logo_crop.png"> 
+   
+    <?php  if (isset($_SESSION['username'])) : ?>
+
+    	<p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <p> <a href="index.php?logout='1'" style="color: grey; font-size:1.1em; ">Afmelden</a> </p>
+       
+    <?php endif ?>  
+      
+ 
+</div>
+
 <div class="home">
 
-<div id="section0">
-        <a href="#section4"><button class="btn btn-secondary center-block"> Nu kopen</button></a>
 </div>
 
   <div id="section1">
@@ -185,7 +189,8 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                   <img src="img/aardbei_crop.png">
                 </div>
              <div class="col">
-                 <div class="color">                        
+                 <div class="color">      
+                 <p> BLASTER Aardbei </p>              
                     <p>De bestverkopende smaak in een nieuw jasje, koop snel de jouwe voordat ze allemaal zijn uitverkocht !</p> 
                     <ul>
                         <li>Goede bron aan <b>vitaminen</b>.</li>
