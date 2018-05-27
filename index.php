@@ -1,5 +1,5 @@
 <?php 
-include("db_conn.php");
+include("db_connOFF.php");
 
 
 $query = "SELECT * FROM users";
@@ -120,6 +120,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <td>".$_POST["name"]."</td>
     <td>".$_POST["email"]."</td>
     <td>".$_POST["subject"]."</td>
+    <td>".$_POST["message"]."</td>
     </tr>
     </table>
     </body>
