@@ -289,8 +289,8 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                         <div class="products">
                             <img src="<?php echo $product['image']; ?>" class="img-responsive" />
                             <h4 class="text-info"><?php echo $product['name']; ?></h4>
-                            <h5>$ <?php echo $product['price']; ?> </h5>
-                            <input type="text" name="quantity" class="form-control" value="1" />
+                            <h5>€ <?php echo $product['price']; ?> </h5>
+                            <input type="text" name="quantity" class="form-control" value="0" />
                             <input type="hidden" name="name" value="<?php echo $product ['name']; ?>" />
                             <input type="hidden" name="price" value="<?php echo $product ['price']; ?>" />
                             <input type="submit" name="add_to_cart" class="btn btn-secondary" value="Kopen" />
@@ -308,16 +308,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
          <div style="clear:both"></div>  
         <br />  
-        <div class="table-responsive">  
-        <table class="table">  
-            <tr><th colspan="5"><h3>Uw producten</h3></th></tr>   
-        <tr>  
-             <th width="40%">Soort</th>  
-             <th width="10%">Hoeveelheid</th>  
-             <th width="20%">Prijs</th>  
-             <th width="15%">Totaal</th>  
-             <th width="5%">Action</th>  
-        </tr>  
+       
         <?php   
         if(!empty($_SESSION['shopping_cart'])):  
             
@@ -325,14 +316,26 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
         
              foreach($_SESSION['shopping_cart'] as $key => $product): 
         ?>  
+
+
+         <div class="table-responsive">  
+        <table class="table">  
+        <tr>  
+             <th width="40%">Soort</th>  
+             <th width="20%">Hoeveelheid</th>  
+             <th width="20%">Prijs</th>  
+             <th width="15%">Totaal</th>  
+             <th width="5%">Verwijder</th>  
+        </tr>  
+
         <tr>  
            <td><?php echo $product['name']; ?></td>  
            <td><?php echo $product['quantity']; ?></td>  
-           <td>$ <?php echo $product['price']; ?></td>  
-           <td>$ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
+           <td>€ <?php echo $product['price']; ?></td>  
+           <td>€ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
            <td>
                <a href="index.php?action=delete&id=<?php echo $product['id']; ?>">
-                    <div class="btn-danger">Verwijder</div>
+                    <div class="btn btn-danger">Verwijder</div>
                </a>
            </td>  
         </tr>  
@@ -341,9 +344,11 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
              endforeach;  
         ?>  
         <tr>  
-             <td colspan="3" align="right">Total</td>  
-             <td align="right">$ <?php echo number_format($total, 2); ?></td>  
-             <td></td>  
+            
+             <td align="right">Total</td>  
+             <td align="right">€ <?php echo number_format($total, 2); ?></td>  
+          
+              
         </tr>  
         <tr>
             <!-- Show checkout button only if the shopping cart is not empty -->

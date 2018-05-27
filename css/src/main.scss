@@ -55,7 +55,7 @@ img{max-width: 100%;}
 }
 
 .products {
-  background:rgb(240, 240, 240);
+  background:rgb(223, 222, 222);
   border-radius: 3px;
     float: left;
   padding: 20px;
@@ -63,8 +63,8 @@ img{max-width: 100%;}
   max-width: 32%;
 }
 .table {
-margin: 0px auto;
-float: center;
+margin: 0 auto; width: 970px; max-width: 100%;
+
 }
 .row {
 margin: 0px auto;
@@ -114,7 +114,6 @@ a:hover {
 h3 {
   margin-top: 0px;
 }
-
 
 form {
   max-width: 600px;
