@@ -3,9 +3,7 @@
 <html>
 <head>
   <title>Meld u eerst aan </title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Tajawal" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="header">

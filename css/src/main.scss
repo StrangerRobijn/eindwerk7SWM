@@ -34,18 +34,18 @@ body{font-family: 'Ubuntu', sans-serif;}
 ::selection {background: #ffb7b7; /* WebKit/Blink Browsers */}
 ::-moz-selection {background: #ffb7b7; /* Gecko Browsers */}
 img{max-width: 100%;}
-#section0 {padding:1%;  position:absolute;z-index: 9999; width: 20%; margin: 0px auto; padding: 20px; background:rgb(242, 242, 242);border-radius: 10px 10px 10px 10px;}
+#section0 { position:absolute; max-width: 18%; margin: 0px auto; padding: 20px; background:rgb(242, 242, 242);border-radius: 10px 10px 10px 10px;}
 #section0 img{margin-bottom: 5%;}
 #section1{margin-top: 2%; }
 #section1 img{ display: block; margin-left: auto;margin-right: auto;}
 #section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -5%;position:relative;font-size: 1.5rem;}
 #section2{margin-top: 3.5%;}
-#section3{margin-top: 4%;margin-left: 2%;}
+#section3{margin-top: 4%;}
 #section3 img{margin-bottom: 5%;}
 #section3 .gif{position: relative; margin-left:auto;margin-right: auto; ;}
 #section3 .col{position: relative; margin-left:auto;margin-right: auto;margin-top: 14%;}
-#section4{position: relative;}
-#section5{position: relative; margin-top:20%;margin-right: auto;}
+#section4 {margin-top: 5%;}
+#section5{position: relative; margin-top:10%;margin-right: auto;}
 #section5 button{position: relative; margin-top:20%;margin-right: auto;}
 
 
@@ -55,14 +55,16 @@ img{max-width: 100%;}
 }
 
 .products {
-  background:rgb(242, 242, 242);
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 20px;
+  background:rgb(240, 240, 240);
+  border-radius: 3px;
+    float: left;
+  padding: 20px;
+  margin: 0.5%;
+  max-width: 32%;
 }
 .table {
 margin: 0px auto;
-float: none;
+float: center;
 }
 .row {
 margin: 0px auto;
@@ -73,7 +75,7 @@ float: none;
 margin: 0 auto;
 }
 .button {
-background: #6394F8;
+background: $primary;
 color:white;
 text-align: center;
 padding: 12px;
@@ -88,7 +90,7 @@ margin: 25px 0 15px 0;
   color: white;
 }
 .button:hover {
-background: #7fa9ff;
+background: #d3e62f;
 text-decoration: none;
 color: white;
 }
@@ -124,6 +126,7 @@ form {
     padding: 1em;
     @include border-radius(8px);
     display: block;
+    background:rgb(242, 242, 242);
     width: 100%;
     margin-top: 1em;
     font-family: 'Merriweather', sans-serif;
@@ -147,6 +150,7 @@ form {
  
  textarea {
      height: 126px;
+     background:rgb(242, 242, 242);
  }
 }
 

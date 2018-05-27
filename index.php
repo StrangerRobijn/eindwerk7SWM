@@ -1,5 +1,5 @@
 <?php 
-include("db_conn.php");
+include("db_connOFF.php");
 
 
 $query = "SELECT * FROM users";
@@ -273,8 +273,6 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
     <div id="section4">
 
-
-        <div class="container">
         <?php
         $connect = mysqli_connect('localhost', 'root', '', 'cart');
         $query = 'SELECT * FROM products ORDER by id ASC';
@@ -291,11 +289,11 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                         <div class="products">
                             <img src="<?php echo $product['image']; ?>" class="img-responsive" />
                             <h4 class="text-info"><?php echo $product['name']; ?></h4>
-                            <h4>$ <?php echo $product['price']; ?> </h4>
+                            <h5>$ <?php echo $product['price']; ?> </h5>
                             <input type="text" name="quantity" class="form-control" value="1" />
                             <input type="hidden" name="name" value="<?php echo $product ['name']; ?>" />
                             <input type="hidden" name="price" value="<?php echo $product ['price']; ?>" />
-                            <input type="submit" name="add_to_cart" class="btn btn-info" value="Kopen" />
+                            <input type="submit" name="add_to_cart" class="btn btn-secondary" value="Kopen" />
 
                          </div>
                      </form>
@@ -334,7 +332,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
            <td>$ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
            <td>
                <a href="index.php?action=delete&id=<?php echo $product['id']; ?>">
-                    <div class="btn-danger">Remove</div>
+                    <div class="btn-danger">Verwijder</div>
                </a>
            </td>  
         </tr>  
@@ -378,12 +376,12 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                 <h1>Form</h1>
                 <form class="cf">
                   <div class="half left cf">
-                    <input type="text" id="input-name" name="name" placeholder="Name" required>
-                    <input type="email" id="input-email" name="email" placeholder="Email address" required>
-                    <input type="text" id="input-subject" name="subject" placeholder="Subject" required>
+                    <input type="text" id="input-name" name="name" placeholder="Naam" required>
+                    <input type="email" id="input-email" name="email" placeholder="Email" required>
+                    <input type="text" id="input-subject" name="subject" placeholder="Onderwerp" required>
                   </div>
                   <div class="half right cf">
-                    <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+                    <textarea name="message" type="text" id="input-message" placeholder="Bericht"></textarea>
                   </div>  
                   <input type="submit" value="Submit" id="input-submit">
                   <br><br>
