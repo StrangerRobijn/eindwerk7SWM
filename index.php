@@ -173,7 +173,9 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <link rel="manifest" href="img/manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -245,6 +247,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
         <div class="hideme">    
                 <img src="img/energie.png">
                <p> Ook op het gebied van energie is Blaster de concurrentie al ver vooruit: met onze eigen aangepaste cafeïne hebben we geen suikers nodig om de gebruiker meer energie te geven.</p> 
+               
             </div>
         </div>
 
@@ -267,6 +270,17 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
         </div>
         </div>
 
+    <div id="quote">
+
+       <p class="qt"> "Blaster zet de bio frisdranken industrie weer op de kaart met zijn 3 ongeloofelijke unieke smaken"</p>
+       <p class="name">-DJ Beat Matter</p>
+
+
+
+    </div>
+
+
+
 
 
     <div id="section4">
@@ -286,7 +300,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                         <form method="post" action="index.php?action=add&id=<?php echo $product ['id']; ?>">
                         <div class="products">
                             <img src="<?php echo $product['image']; ?>" class="img-responsive" />
-                            <h4 class="text-info"><?php echo $product['name']; ?></h4>
+                            <h4 class="text"><?php echo $product['name']; ?></h4>
                             <h5>€ <?php echo $product['price']; ?> </h5>
                             <input type="text" name="quantity" class="form-control" value="0" />
                             <input type="hidden" name="name" value="<?php echo $product ['name']; ?>" />
