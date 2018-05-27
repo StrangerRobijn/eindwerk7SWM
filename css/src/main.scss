@@ -34,10 +34,24 @@ body{font-family: 'Ubuntu', sans-serif;}
 ::selection {background: #ffb7b7; /* WebKit/Blink Browsers */}
 ::-moz-selection {background: #ffb7b7; /* Gecko Browsers */}
 img{max-width: 100%;}
+.bg {
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
+  background: url('https://images.wallpaperscraft.com/image/fern_leaf_plant_green_119970_3840x2160.jpg ') no-repeat center center;
+  background-size: cover;
+
+  transform: scale(1.1);
+}
 #section0 { position:absolute; max-width: 18%; margin: 0px auto; padding: 20px; background:rgb(242, 242, 242);border-radius: 10px 10px 10px 10px;}
 #section0 img{margin-bottom: 5%;}
-#section1{margin-top: 2%; }
-#section1 img{ display: block; margin-left: auto;margin-right: auto;}
+#section1{margin-top: 2%; z-index: 999; ; }
+#section1 img{display: block; margin-left: auto;margin-right: auto;}
 #section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -5%;position:relative;font-size: 1.5rem;}
 #section2{margin-top: 3.5%;}
 #section3{margin-top: 4%;}
@@ -114,6 +128,9 @@ a:hover {
 h3 {
   margin-top: 0px;
 }
+
+
+
 
 form {
   max-width: 600px;
@@ -747,4 +764,80 @@ NAVIGATION
   
 
 
+//login css
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-size: 100%; 
+  
+  font-family: 'Merriweather', sans-serif;
+}
+
+
+.inlog {
+  background: white;
+  width: 30%;
+  margin: 0px auto;
+  padding: 3%;
+  margin-top: 7%;
+      border-radius: 10px 10px 10px 10px;
+}
+.input-group {
+  margin: 10px 0px 10px 0px;
+  border-radius:8px;
+}
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+.input-group input {
+  border:0; outline:0;
+  padding: 1em;
+  border-radius:8px;
+
+  display: block;
+  background:rgb(242, 242, 242);
+
+  width: 70%;
+  margin-top: 1em;
+  font-family: 'Merriweather', sans-serif;
+  
+  
+}
+
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
+}
+.success {
+  color: #3c763d; 
+  background: #dff0d8; 
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
+  background: url('https://images.wallpaperscraft.com/image/fern_leaf_plant_green_119970_3840x2160.jpg ') no-repeat center center;
+  background-size: cover;
+
+  transform: scale(1.1);
+}

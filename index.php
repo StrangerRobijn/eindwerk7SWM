@@ -1,5 +1,5 @@
 <?php 
-include("db_connOFF.php");
+include("db_conn.php");
 
 
 $query = "SELECT * FROM users";
@@ -209,14 +209,11 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
  
 </div>
 
-<div class="home">
 
-</div>
-
+<div class="bg"></div>
   <div id="section1">
-      <img src="img/trio2.png">
+<img src="img/trio2.png">
       <a href="#section4"><button class="btn btn-primary center-block"> Zie meer</button></a>
-    
   </div>
 
   </div>
