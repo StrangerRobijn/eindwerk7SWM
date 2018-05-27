@@ -20,7 +20,7 @@
   		<input type="password" name="password">
   	</div>
   	<div class="input-group">
-			<button type="submit" class="btn" name="login_user" id="input-submit">Login</button>
+			<button type="submit" name="login_user" id="input-submit">Login</button>
   	</div>
   	<p>
   		Nog geen account? <a href="register.php">Maak een account</a>

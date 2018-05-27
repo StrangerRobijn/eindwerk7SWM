@@ -132,7 +132,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <robindekesel@gmail.com>' . "\r\n";
+    $headers .= 'From: <dekeselr@visocloud.org>' . "\r\n";
     $headers .= 'Cc: test@visocloud.org' . "\r\n";
 
     if(mail($to,$subject,$message,$headers)){
@@ -357,7 +357,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
         ?>  
         <tr>  
             
-             <td align="right">Total</td>  
+             <td align="right">Totaal bedrag</td>  
              <td align="right">€ <?php echo number_format($total, 2); ?></td>  
           
               
@@ -390,7 +390,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-                <h1>Form</h1>
+                <h1>Hulp forum</h1>
                 <form class="cf">
                   <div class="half left cf">
                     <input type="text" id="input-name" name="name" placeholder="Naam" required>
