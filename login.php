@@ -12,12 +12,12 @@
 		<?php include('errors.php'); ?>
 		<h2>Login</h2>
   	<div class="input-group">
-  		<label>Gebruikersnaam</label>
-  		<input type="text" name="username" >
+  		
+  		<input type="text" name="username" placeholder="Gebruikersnaam" autocomplete="off" >
   	</div>
   	<div class="input-group">
-  		<label>Wachtwoord</label>
-  		<input type="password" name="password">
+  		
+  		<input type="password" name="password" placeholder="Wachtwoord">
   	</div>
   	<div class="input-group">
 			<button type="submit" name="login_user" id="input-submit">Login</button>

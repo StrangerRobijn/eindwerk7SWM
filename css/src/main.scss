@@ -25,7 +25,7 @@ $third:rgba(238, 55, 55, 0.966);
 
 
 *{ box-sizing: border-box; }
-.wrapper{  margin: 0 auto; width: 1080px; max-width: 100%;}
+.wrapper{  margin: 0 auto;  max-width: 80%;}
 html { overflow: scroll; overflow-x: hidden;font-size: 14px; }
 body{font-family: 'Ubuntu', sans-serif;}
 ::-webkit-scrollbar { width: 0px;  /* remove scrollbar space */ background: transparent;  /* optional: just make scrollbar invisible */}
@@ -43,10 +43,10 @@ img{max-width: 100%;}
 #section3 img{margin-bottom: 5%;}
 #section3 .gif{position: relative; margin-left:auto;margin-right: auto;   }
 #section3 .col{position: relative; margin-left:auto;margin-right: auto;margin-top: 14%;}
-#quote{background:#F6EE7D;margin-top: 5.5%; height: 250px;}
+#quote{background:rgb(165, 246, 125);margin-top: 5.5%; height: 250px;}
 #quote p{ margin-top:auto;margin-left: auto;margin-right: auto; color: white; text-align: center; font-family: 'Josefin Sans', sans-serif;}
 #quote p.qt{padding-top: 7%;font-size:1.8em;}
-#quote p.name{color: rgb(238, 55, 55); font-family: 'Quicksand', sans-serif; font-size: 1em; }
+#quote p.name{color: rgb(255, 255, 255); font-family: 'Quicksand', sans-serif; font-size: 1em; }
 #section4 {margin-top: 5%; background: rgb(240, 240, 240);}
 #section5{position: relative; margin-top:10%;margin-right: auto;}
 #section5 button{position: relative; margin-top:20%;margin-right: auto;}
@@ -406,7 +406,7 @@ NAVIGATION
     -moz-transition: -moz-transform 0.2s;
     transition: transform 0.2s;
     border-radius: 0.25em;
-    background-color: rgba(24, 21, 218, 0.8);
+    background-color: rgba(149, 148, 220, 0.8);
   }
   .cd-vertical-nav a {
     display: block;
@@ -482,7 +482,7 @@ NAVIGATION
       left: 0;
       width: 100%;
       height: 100%;
-      background: #F6EE7D;
+      background: rgb(243, 233, 92);
       -webkit-transform: translateX(100%);
       -moz-transform: translateX(100%);
       -ms-transform: translateX(100%);
@@ -759,13 +759,6 @@ NAVIGATION
   padding: 0px;
 }
 
-body {
-  font-size: 100%; 
-  
-  font-family: 'Merriweather', sans-serif;
-}
-
-
 .inlog {
   background: white;
   width: 30%;
@@ -787,11 +780,10 @@ body {
   border:0; outline:0;
   padding: 1em;
   border-radius:8px;
-
   display: block;
   background:rgb(242, 242, 242);
-
   width: 70%;
+  margin: 0 auto;
   margin-top: 1em;
   font-family: 'Merriweather', sans-serif;
   

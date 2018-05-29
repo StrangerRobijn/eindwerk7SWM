@@ -1,5 +1,5 @@
 <?php 
-include("db_conn.php");
+include("db_connOFF.php");
 
 
 $query = "SELECT * FROM users";
@@ -182,8 +182,8 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 </head>
 <body>
 
-<div class="wrapper">
 
+<div class="wrapper">
 
 <article>
 
@@ -192,7 +192,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                 <ul>
                     <li><a href="#section1" ><span class="label">Begin</span></a></li>
                     <li><a href="#section2"><span class="label">Video</span></a></li>
-                    <li><a href="#section3"><span class="label">Het merk</span></a></li>
+                    <li><a href="#section3"><span class="label">Merk</span></a></li>
                     <li><a href="#section4"><span class="label">Kopen</span></a></li>
                 </ul>
             </nav><!-- .cd-vertical-nav -->
@@ -223,7 +223,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
   <div id="section2">         
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="290" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
    </div>
   </div>
      
@@ -272,8 +272,8 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
     <div id="quote">
 
-       <p class="qt"> "Blaster zet de bio frisdranken industrie weer op de kaart met zijn 3 ongeloofelijke unieke smaken"</p>
-       <p class="name">-DJ Beat Matter</p>
+    <div class="hideme"> <p class="qt"> "Blaster zet de bio frisdranken industrie weer op de kaart met zijn 3 ongeloofelijke unieke smaken"</p> </div>
+    <div class="hideme">  <p class="name">-DJ Beat Matter</p></div>
 
 
 
@@ -286,7 +286,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <div id="section4">
 
         <?php
-        $connect = mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
+        $connect = mysqli_connect('localhost', 'root', '', 'cart');
         $query = 'SELECT * FROM products ORDER by id ASC';
 
         $result = mysqli_query($connect, $query);
@@ -398,7 +398,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                     <input type="text" id="input-subject" name="subject" placeholder="Onderwerp" required>
                   </div>
                   <div class="half right cf">
-                    <textarea name="message" type="text" id="input-message" placeholder="Bericht"></textarea>
+                    <textarea name="message" type="text" id="input-message" c(></textarea>
                   </div>  
                   <input type="submit" value="Submit" id="input-submit">
                   <br><br>

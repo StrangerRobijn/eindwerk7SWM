@@ -157,6 +157,9 @@ $(document).ready(function() {
 });
 
 
+//parallax effect
+
+
 var lFollowX = 0,
     lFollowY = 0,
     x = 0,
@@ -182,8 +185,8 @@ $(window).on('mousemove click', function(e) {
 
   var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
   var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
-  lFollowX = (20 * lMouseX) / 500; // 100 : 12 = lMouxeX : lFollow
-  lFollowY = (10 * lMouseY) / 500;
+  lFollowX = (20 * lMouseX) / 190; // 100 : 12 = lMouxeX : lFollow
+  lFollowY = (10 * lMouseY) / 190;
 
 });
 

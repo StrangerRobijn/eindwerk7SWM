@@ -14,20 +14,20 @@
 		<?php include('errors.php'); ?>
 		<h2>Registreer</h2>
   	<div class="input-group">
-  	  <label>Gebruikersnaam</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
+  	  
+  	  <input type="text" name="username" placeholder="Gebruikersnaam" value="<?php echo $username; ?>">
   	</div>
   	<div class="input-group">
-  	  <label>Email</label>
-  	  <input type="email" name="email" value="<?php echo $email; ?>">
+  	 
+  	  <input type="email" name="email" placeholder="Email" value="<?php echo $email; ?>">
   	</div>
   	<div class="input-group">
-  	  <label>Wachtwoord</label>
-  	  <input type="password" name="password_1">
+  	  
+  	  <input type="password" name="password_1" placeholder="Wachtwoord">
   	</div>
   	<div class="input-group">
-  	  <label>Bevestig wachtwoord</label>
-  	  <input type="password" name="password_2">
+  	 
+  	  <input type="password" name="password_2" placeholder="Bevestig Wachtwoord">
   	</div>
   	<div class="input-group">
   	  <button type="submit" class="btn" name="reg_user">Registreren</button>
