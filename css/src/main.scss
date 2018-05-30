@@ -50,6 +50,8 @@ img{max-width: 100%;}
 #section4 {margin-top: 5%; background: rgb(240, 240, 240);}
 #section5{position: relative; margin-top:10%;margin-right: auto;}
 #section5 button{position: relative; margin-top:20%;margin-right: auto;}
+#section6 button{display: block; margin-left: auto;margin-right: auto; margin-top: 15%;position:relative;font-size: 1.5rem;}
+
 
 
 .hideme{opacity:0;}
@@ -812,6 +814,7 @@ NAVIGATION
   
   position: absolute;
   top: 0;
+
   left: 0;
   z-index: -1;
   
@@ -820,3 +823,5 @@ NAVIGATION
 
   transform: scale(1.1);
 }
+
+

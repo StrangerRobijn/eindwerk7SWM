@@ -1,6 +1,6 @@
 <?php
 
-include("db_conn.php");
+include("db_connOFF.php");
 
 session_start();
 
@@ -10,7 +10,7 @@ $email    = "";
 $errors = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
+$db = mysqli_connect('localhost', 'root', '', 'registration');
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -54,7 +54,7 @@ if (isset($_POST['reg_user'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "Je bent nu ingelogd";
-  	header('location: login.php');
+  	header('location: index.php');
   }
 }
 

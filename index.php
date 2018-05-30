@@ -1,5 +1,5 @@
 <?php 
-include("db_conn.php");
+include("db_connOFF.php");
 
 
 $query = "SELECT * FROM users";
@@ -193,7 +193,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                     <li><a href="#section1" ><span class="label">Begin</span></a></li>
                     <li><a href="#section2"><span class="label">Video</span></a></li>
                     <li><a href="#section3"><span class="label">Merk</span></a></li>
-                    <li><a href="#section4"><span class="label">Kopen</span></a></li>
+                    <li><a href="#section6"><span class="label">Kopen</span></a></li>
                 </ul>
             </nav><!-- .cd-vertical-nav -->
             <button class="cd-nav-trigger cd-image-replace"><span aria-hidden="true"></span></button>
@@ -283,108 +283,12 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
 
 
-    <div id="section4">
+    <div id="section6">
 
-        <?php
-        $connect =  mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
+                      <a href="products.php"><button class="btn btn-primary center-block"> Blaster kopen</button></a>
 
-        $query = 'SELECT * FROM products ORDER by id ASC';
-
-        $result = mysqli_query($connect, $query);
-
-        if ($result):
-            if(mysqli_num_rows($result)>0):
-                while($product = mysqli_fetch_assoc($result)):
-                   ?>
-
-                    <div class="container">
-                        <form method="post" action="index.php?action=add&id=<?php echo $product ['id']; ?>">
-                        <div class="products">
-                            <img src="<?php echo $product['image']; ?>" class="img-responsive" />
-                            <h4 class="text"><?php echo $product['name']; ?></h4>
-                            <h5>€ <?php echo $product['price']; ?> </h5>
-                            <input type="text" name="quantity" class="form-control" value="0" />
-                            <input type="hidden" name="name" value="<?php echo $product ['name']; ?>" />
-                            <input type="hidden" name="price" value="<?php echo $product ['price']; ?>" />
-                            <input type="submit" name="add_to_cart" class="btn btn-secondary" value="Kopen" />
-
-                         </div>
-                     </form>
-                </div>
-
-                   <?php
-                   endwhile;
-                endif;
-            endif;
-
-    ?>
-
-         <div style="clear:both"></div>  
-        <br />  
-       
-        <?php   
-        if(!empty($_SESSION['shopping_cart'])):  
-            
-             $total = 0;  
-        
-             foreach($_SESSION['shopping_cart'] as $key => $product): 
-        ?>  
-
-
-         <div class="table-responsive">  
-        <table class="table">  
-        <tr>  
-             <th width="40%">Soort</th>  
-             <th width="20%">Hoeveelheid</th>  
-             <th width="20%">Prijs</th>  
-             <th width="15%">Totaal</th>  
-             <th width="5%">Verwijder</th>  
-        </tr>  
-
-        <tr>  
-           <td><?php echo $product['name']; ?></td>  
-           <td><?php echo $product['quantity']; ?></td>  
-           <td>€ <?php echo $product['price']; ?></td>  
-           <td>€ <?php echo number_format($product['quantity'] * $product['price'], 2); ?></td>  
-           <td>
-               <a href="index.php?action=delete&id=<?php echo $product['id']; ?>">
-                    <div class="btn btn-danger">Verwijder</div>
-               </a>
-           </td>  
-        </tr>  
-        <?php  
-                  $total = $total + ($product['quantity'] * $product['price']);  
-             endforeach;  
-        ?>  
-        <tr>  
-            
-             <td align="right">Totaal bedrag</td>  
-             <td align="right">€ <?php echo number_format($total, 2); ?></td>  
-          
-              
-        </tr>  
-        <tr>
-            <!-- Show checkout button only if the shopping cart is not empty -->
-            <td colspan="5">
-             <?php 
-                if (isset($_SESSION['shopping_cart'])):
-                if (count($_SESSION['shopping_cart']) > 0):
-             ?>
-                <a href="#" class="button">Betalen</a>
-             <?php endif; endif; ?>
-            </td>
-        </tr>
-        <?php  
-        endif;
-        ?>  
-        </table>  
-    </div>
-    </div>
 
     </div>
-
-
-
 
 
          <div id="section5">
@@ -399,7 +303,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                     <input type="text" id="input-subject" name="subject" placeholder="Onderwerp" required>
                   </div>
                   <div class="half right cf">
-                    <textarea name="message" type="text" id="input-message" c(></textarea>
+                    <textarea name="message" type="text" id="input-message"  placeholder="Bericht" ></textarea>
                   </div>  
                   <input type="submit" value="Submit" id="input-submit">
                   <br><br>
