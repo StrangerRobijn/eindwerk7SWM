@@ -194,9 +194,10 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
    
     <?php  if (isset($_SESSION['username'])) : ?>
 
-    	<p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
+        <p> <a href="index.php" style="color: white; font-size:1.1em; ">Homepagina</a> </p>
         <p> <a href="index.php?logout='1'" style="color: grey; font-size:1.1em; ">Afmelden</a> </p>
-        <p> <a href="index.php" style="color: grey; font-size:1.1em; ">Homepagina</a> </p>
+        
 
        
     <?php endif ?>  
@@ -211,7 +212,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <div id="section4">
 
         <?php
-        $connect =  mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
+        $connect =  mysqli_connect('localhost', 'root', '', 'cart');
 
         $query = 'SELECT * FROM products ORDER by id ASC';
 
@@ -310,28 +311,6 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
 
 
-
-
-         <div id="section5">
-
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-                <h1>Hulp forum</h1>
-                <form class="cf">
-                  <div class="half left cf">
-                    <input type="text" id="input-name" name="name" placeholder="Naam" required>
-                    <input type="email" id="input-email" name="email" placeholder="Email" required>
-                    <input type="text" id="input-subject" name="subject" placeholder="Onderwerp" required>
-                  </div>
-                  <div class="half right cf">
-                    <textarea name="message" type="text" id="input-message"  placeholder="Bericht" ></textarea>
-                  </div>  
-                  <input type="submit" value="Submit" id="input-submit">
-                  <br><br>
-                </form>
-
-            </form>
-        </div>
 
 
     </div>
