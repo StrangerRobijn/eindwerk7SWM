@@ -1,5 +1,5 @@
 <?php 
-include("db_connOFF.php");
+include("db_conn.php");
 
 
 $query = "SELECT * FROM users";
@@ -212,7 +212,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <div id="section4">
 
         <?php
-        $connect =  mysqli_connect('localhost', 'root', '', 'cart');
+        $connect =  mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
 
         $query = 'SELECT * FROM products ORDER by id ASC';
 

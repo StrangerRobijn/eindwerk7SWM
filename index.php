@@ -1,5 +1,5 @@
 <?php 
-include("db_connOFF.php");
+include("db_conn.php");
 
 
 $query = "SELECT * FROM users";
@@ -155,13 +155,10 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
 
   <div id="section2">         
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="290" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" encrypted-media" allowfullscreen></iframe>
-   </div>
+        <iframe width="560" height="290" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" encrypted-media allowfullscreen></iframe>
+       </div>
   </div>
      
-
-
-
 
 
    <div id="section3">     
