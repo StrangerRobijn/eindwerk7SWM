@@ -1,5 +1,5 @@
 <?php 
-include("db_conn.php");
+include("db_connOFF.php");
 
 
 $query = "SELECT * FROM users";
@@ -195,7 +195,6 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <?php  if (isset($_SESSION['username'])) : ?>
 
         <p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index.php" style="color: white; font-size:1.1em; ">Homepagina</a> </p>
         <p> <a href="index.php?logout='1'" style="color: grey; font-size:1.1em; ">Afmelden</a> </p>
         
 
@@ -212,7 +211,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <div id="section4">
 
         <?php
-        $connect =  mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
+        $connect =  mysqli_connect('localhost', 'root', '', 'cart');
 
         $query = 'SELECT * FROM products ORDER by id ASC';
 
@@ -283,7 +282,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
              endforeach;  
         ?>  
         <tr>  
-            
+        
              <td align="right">Totaal bedrag</td>  
              <td align="right">€ <?php echo number_format($total, 2); ?></td>  
           
@@ -291,7 +290,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
         </tr>  
         <tr>
             <!-- Show checkout button only if the shopping cart is not empty -->
-            <td colspan="5">
+            <td colspan="1">
              <?php 
                 if (isset($_SESSION['shopping_cart'])):
                 if (count($_SESSION['shopping_cart']) > 0):

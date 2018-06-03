@@ -1,5 +1,5 @@
 <?php 
-include("db_conn.php");
+include("db_connOFF.php");
 
 
 $query = "SELECT * FROM users";
@@ -19,10 +19,6 @@ $result = mysqli_query($db, $query);
 ?>
 
 
-
-
-
-
 <?php
 // validatie
 if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
@@ -32,13 +28,13 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     $_POST['subject'] = htmlspecialchars($_POST['subject']);
 
 
-    $to = $_POST["email"];
+    $to = $_POST["dekeselr@visocloud.org"];
     $subject = "contact via site";
 
     $message = "
     <html>
     <head>
-    <title>Contact via site</title>
+    <title>Blaster Hulp Forum</title>
     </head>
     <body>
     <p>Wij hebben je aanvraag goed ontvangen!</p>
@@ -46,6 +42,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <tr>
     <th>Naam</th>
     <th>E-mail</th>
+    <th>Onderwerp</th>
     <th>Bericht</th>
     </tr>
     <tr>
@@ -64,7 +61,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <dekeselr@visocloud.org>' . "\r\n";
+    $headers .= 'From: <blaster@hulp.com>' . "\r\n";
     $headers .= 'Cc: test@visocloud.org' . "\r\n";
 
     if(mail($to,$subject,$message,$headers)){
@@ -156,9 +153,12 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
   <div id="section2">         
       <div class="embed-responsive embed-responsive-16by9">
         <iframe width="560" height="290" src="https://www.youtube.com/embed/2btPQbrAxU8?showinfo=0" frameborder="0" encrypted-media allowfullscreen></iframe>
-       </div>
+   </div>
   </div>
      
+
+
+
 
 
    <div id="section3">     
