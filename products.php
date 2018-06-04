@@ -1,11 +1,15 @@
 <?php 
+session_start(); 
 include("db_conn.php");
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 
 $query = "SELECT * FROM users";
 $result = mysqli_query($db, $query);
 
-  session_start(); 
+
 
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
@@ -18,9 +22,37 @@ $result = mysqli_query($db, $query);
   }
 ?>
 
-
+<?php
+if (! function_exists('array_column')) {
+    function array_column(array $input, $columnKey, $indexKey = null) {
+        $array = array();
+        foreach ($input as $value) {
+            if ( !array_key_exists($columnKey, $value)) {
+                trigger_error("Key \"$columnKey\" does not exist in array");
+                return false;
+            }
+            if (is_null($indexKey)) {
+                $array[] = $value[$columnKey];
+            }
+            else {
+                if ( !array_key_exists($indexKey, $value)) {
+                    trigger_error("Key \"$indexKey\" does not exist in array");
+                    return false;
+                }
+                if ( ! is_scalar($value[$indexKey])) {
+                    trigger_error("Key \"$indexKey\" does not contain scalar value");
+                    return false;
+                }
+                $array[$value[$indexKey]] = $value[$columnKey];
+            }
+        }
+        return $array;
+    }
+}
+?>
 
 <?php
+
 
 $product_ids = array();
 //session_destroy();
@@ -66,6 +98,7 @@ if(filter_input(INPUT_POST, 'add_to_cart')){
         );
     }
 }
+
 
 if(filter_input(INPUT_GET, 'action') == 'delete'){
     //loop through all products in the shopping cart until it matches with GET id variable
