@@ -18,16 +18,68 @@ $result = mysqli_query($db, $query);
   }
 ?>
 
+
+
+<?php
+// validatie
+if(isset($_POST['email'])){
+  
+    $_POST['email'] = htmlspecialchars($_POST['email']);
+
+  
+    $to = $_POST['email'];
+    $subject = "Blaster nieuwsbrief";
+
+    $message = "
+    <html>
+    <head>
+    <title>GIP</title>
+    </head>
+    <body>
+    <p>Beste,</p>
+    <table>
+    <tr>
+    <th><h4> Danku voor u aan te melden voor de nieuwsbrief !</h4></th>
+    </tr>
+    <tr>
+     <p> Uw email: ".$_POST["email"]." </p>
+     <p> Uw gebruikersnaam: ".$_POST["username"]." </p>
+    </tr>
+    </table>
+    </body>
+    </html>
+    ";
+
+    // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+
+    if(mail($to,$subject,$message,$headers)){
+        echo "<p><strong>mail verstuurd</strong></p>";
+      } else {
+        echo "<p>Fout bij het versturen van e-mail</p>";
+      }
+  
+}
+
+?>
+
+
+
 <?php
 
-if (isset($_POST['username'])  ) {
-                        $_POST['email'] = mysqli_real_escape_string($db, $_POST['email']);
+if (isset($_POST['username']) &&  isset($_POST['email']) ) {
+            
+            $_POST['username'] = mysqli_real_escape_string($db, $_POST['username']);
+            $_POST['email'] = mysqli_real_escape_string($db, $_POST['email']);
   
           
         
     echo " ";
     
-    $sql = "INSERT INTO gip_nieuwsbrief (email) VALUES   '{$_POST['email']}')";
+    $sql = "INSERT INTO gip_nieuwsbrief (username, email)
+    VALUES ('{$_POST['username']}',  '{$_POST['email']}')";
         
     if ($result = mysqli_query($db, $sql)) {
 
@@ -84,67 +136,26 @@ if (isset($_POST['username'])  ) {
 <div class="inlog">	 
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 
-   <label for="email">Aanmelden voor de nieuwsbrief<br></label>
-   <input type="email" id="input-email" name="email" placeholder="Email" required>
+
+   <input type="text" name="username" id="username" placeholder="Gebruikersnaam*" required> <br>
    <br>
 
+   
+  <input type="text" name="email" id="email" placeholder="E-mail*" required> <br>
+   <br>
 
-  <input type="submit" value="Aanmelden">
-
-    
+  <input type="submit" value="Aanmelden voor nieuwsbrief">
 
 </form>
-
-  <a href="index.php"><button class="btn btn-primary center-block">Homepagina</button></a>
+<a href="products.php"><button class="btn btn-primary center-block">Homepagina</button></a>
 </div>
 </div>
 </div>
 
 
-<?php
-// validatie
-if(isset($_POST['email'])){
-  
-    $_POST['email'] = htmlspecialchars($_POST['email']);
-
-  
-    $to = $_POST['email'];
-    $subject = "Blaster nieuwsbrief";
-
-    $message = "
-    <html>
-    <head>
-    <title>GIP</title>
-    </head>
-    <body>
-    <p>Beste,</p>
-    <table>
-    <tr>
-    <th><h4> Danku voor u aan te melden voor de nieuwsbrief !</h4></th>
-    </tr>
-    <tr>
-     <p> Uw email: ".$_POST["email"]." </p>
-    </tr>
-    </table>
-    </body>
-    </html>
-    ";
-
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p><strong>mail verstuurd</strong></p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
-  
-}
-
-?>
-
+</script>
   <script src="js/dist/main.min.js"></script>
           <script src="js/src/main.js"></script>
           <script src="js/dist/modernizr.js"></script> <!-- Modernizr -->
@@ -157,3 +168,4 @@ if(isset($_POST['email'])){
 <?php
 mysqli_close($db);
 ?>
+
