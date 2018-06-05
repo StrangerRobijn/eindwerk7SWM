@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-include("db_connOFF.php");
+include("db_conn.php");
 
 
 $query = "SELECT * FROM users";
@@ -38,6 +38,9 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     </head>
     <body>
     <p>Wij hebben je aanvraag goed ontvangen!</p>
+    <p>We bekijken zo spoedig mogelijk je aanvraag na.</p>
+    <p>bedankt om ons te contacteren.</p>
+    <p><strong>Het Blaster team</strong></p>
     <table>
     <tr>
     <th>Naam</th>
@@ -129,8 +132,10 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
    
     <?php  if (isset($_SESSION['username'])) : ?>
 
-    	<p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index.php?logout='1'" style="color: grey; font-size:1.1em; ">Afmelden</a> </p>
+        <p style="color: white; font-size:1.3em; ">Dag <strong><?php echo $_SESSION['username']; ?>,</strong></p>
+        <p><a href="subscribe.php"style="color: white; font-size:1em; "> Nieuwsbrief</a></p>
+
+        <p> <a href="index.php?logout='1'" style="color: grey; font-size:1em; ">Afmelden</a> </p>
        
     <?php endif ?>  
       
@@ -211,7 +216,6 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <div id="section6">
 
                       <a href="products.php"><button class="btn btn-primary center-block"> Blaster kopen</button></a>
-
 
     </div>
 

@@ -84,13 +84,18 @@ if (isset($_POST['username'])  ) {
 <div class="inlog">	 
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 
-   <label for="email">E-mail:*<br></label>
+   <label for="email">Aanmelden voor de nieuwsbrief<br></label>
    <input type="email" id="input-email" name="email" placeholder="Email" required>
    <br>
 
 
-  <input type="submit" value="Aanmelden voor nieuwsbrief">
+  <input type="submit" value="Aanmelden">
+
+    
+
 </form>
+
+  <a href="index.php"><button class="btn btn-primary center-block">Homepagina</button></a>
 </div>
 </div>
 </div>
@@ -115,7 +120,7 @@ if(isset($_POST['email'])){
     <p>Beste,</p>
     <table>
     <tr>
-    <th><h3> Danku voor u aan te melden voor de nieuwsbrief !</h3></th>
+    <th><h4> Danku voor u aan te melden voor de nieuwsbrief !</h4></th>
     </tr>
     <tr>
      <p> Uw email: ".$_POST["email"]." </p>
@@ -131,7 +136,7 @@ if(isset($_POST['email'])){
 
 
     if(mail($to,$subject,$message,$headers)){
-        echo "<p>mail verstuurd</p>";
+        echo "<p><strong>mail verstuurd</strong></p>";
       } else {
         echo "<p>Fout bij het versturen van e-mail</p>";
       }

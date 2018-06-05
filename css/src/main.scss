@@ -92,7 +92,6 @@ margin: 25px 0 15px 0;
   color: white;
 }
 .button:hover {
-background: #d3e62f;
 text-decoration: none;
 color: white;
 }
@@ -142,7 +141,7 @@ form {
  }
  
  #input-submit {
-    color: white; 
+    color: black; 
     background: $primary;
     cursor: pointer;
    
@@ -408,7 +407,6 @@ NAVIGATION
     padding: 1em;
     color: #c2d5ff;
     font-weight: bold;
-    border-bottom: 1px solid rgba(58, 44, 65, 0.1);
   }
   .cd-vertical-nav a.active {
     color: #a6d4ff7c;
@@ -425,7 +423,7 @@ NAVIGATION
     background-color: transparent;
   }
   .cd-vertical-nav.open + .cd-nav-trigger span {
-    background-color: rgba(58, 44, 65, 0);
+    background-color: rgba(140, 140, 140, 0.905);
   }
   .cd-vertical-nav.open + .cd-nav-trigger span::before, .cd-vertical-nav.open + .cd-nav-trigger span::after {
     /* transform dots in 'X' icon */
@@ -473,19 +471,23 @@ NAVIGATION
       /* this is the navigation background */
       content: '';
       position: absolute;
+      margin: auto;
       top: 0;
+      right: 0;
+      bottom: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgb(9, 12, 33);
+      width: 100px;
+      height: 500px;
+      background-color: rgba(220, 219, 253, 0.363);
       -webkit-transform: translateX(100%);
       -moz-transform: translateX(100%);
       -ms-transform: translateX(100%);
       -o-transform: translateX(100%);
       transform: translateX(100%);
-      -webkit-transition: -webkit-transform 0.4s;
-      -moz-transition: -moz-transform 0.4s;
-      transition: transform 0.4s;
+      -webkit-transition: -webkit-transform 0.2s;
+      -moz-transition: -moz-transform 0.2s;
+      transition: transform 0.2s;
+      border-radius: 5px;
     }
     .no-touch .cd-vertical-nav:hover::before, .touch .cd-vertical-nav::before {
       -webkit-transform: translateX(0);
@@ -532,7 +534,7 @@ NAVIGATION
       height: 32px;
       width: 32px;
       border-radius: 50%;
-      background:#828181;
+      background:$primary;
       -webkit-transform: translateX(-50%) scale(0.25);
       -moz-transform: translateX(-50%) scale(0.25);
       -ms-transform: translateX(-50%) scale(0.25);
