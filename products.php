@@ -124,61 +124,6 @@ function pre_r($array){
 
 
 
-<?php
-// validatie
-if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
-
-    $_POST['name'] = htmlspecialchars($_POST['name']);
-    $_POST['email'] = htmlspecialchars($_POST['email']);
-    $_POST['subject'] = htmlspecialchars($_POST['subject']);
-
-
-    $to = $_POST["email"];
-    $subject = "contact via site";
-
-    $message = "
-    <html>
-    <head>
-    <title>Contact via site</title>
-    </head>
-    <body>
-    <p>Wij hebben je aanvraag goed ontvangen!</p>
-    <table>
-    <tr>
-    <th>Naam</th>
-    <th>E-mail</th>
-    <th>Bericht</th>
-    </tr>
-    <tr>
-    <td>".$_POST["name"]."</td>
-    <td>".$_POST["email"]."</td>
-    <td>".$_POST["subject"]."</td>
-    <td>".$_POST["message"]."</td>
-    </tr>
-    </table>
-    </body>
-    </html>
-    ";
-
-    // Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-    // More headers
-    $headers .= 'From: <dekeselr@visocloud.org>' . "\r\n";
-    $headers .= 'Cc: test@visocloud.org' . "\r\n";
-
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p>Bericht verstuurd</p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
-
-}
- 
-?>
-  
-
 
 
 
@@ -328,8 +273,10 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                 if (isset($_SESSION['shopping_cart'])):
                 if (count($_SESSION['shopping_cart']) > 0):
              ?>
-                <a href="#" class="button">Betalen</a>
+             
+                <a href="pay.php" class="button">Betalen</a>
              <?php endif; endif; ?>
+             
             </td>
         </tr>
         <?php  
