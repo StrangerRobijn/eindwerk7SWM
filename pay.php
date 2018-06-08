@@ -60,11 +60,7 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p>Bericht verstuurd</p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
+
 
 }
  
@@ -113,26 +109,10 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
 <article>
 
 
-   <div id="section0">
-  
-    <img src="img/standaard_logo_crop.png"> 
-   
-    <?php  if (isset($_SESSION['username'])) : ?>
-
-        <p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index.php?logout='1'" style="color: grey; font-size:1.1em; ">Afmelden</a> </p>
-        
-
-       
-    <?php endif ?>  
-      
- 
-</div>
-
-
     <article>
 
   <div class="bg"></div>
+
 
 
 
@@ -143,7 +123,7 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
   <div class="form-toggle"></div>
   <div class="form-panel one">
     <div class="form-header">
-      <h1>Betaalkaart</h1>
+      <h1>Bankcontact</h1>
     </div>
     <div class="form-content">
       <form>
@@ -157,11 +137,22 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
         <input type="text" name="adres" id="adres" placeholder="Adres*" required>
         </div>
         <div class="form-group">
+        <input type="number" name="number" id="number" placeholder="Telefoonnummer*" required> 
+        </div>
+
+        <div class="form-group">
           <button type="submit">Kopen</button>
+          <?php   if(mail($to,$subject,$message,$headers)){
+        echo "<p>Er is een bevestigingsmail gestuurd naar ".$_POST["email"]." </p>";
+      }?>
+      <br>
         </div>
       </form>
     </div>
   </div>
+</form>
+
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
   <div class="form-panel two">
     <div class="form-header">
       <h1>PayPal</h1>
@@ -169,7 +160,7 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
     <div class="form-content">
       <form>
         <div class="form-group">
-        <input type="text" name="email" id="email" placeholder="PayPal E-mail*" required>
+        <input type="text" name="email" id="email" placeholder="E-mail*" required>
         </div>
         <div class="form-group">
         <input type="text" name="adres" id="adres" placeholder="Adres*" required>
@@ -220,9 +211,7 @@ $(document).ready(function() {
       $('.form-toggle').addClass('visible');
       $('.form-panel.one').addClass('hidden');
       $('.form-panel.two').addClass('active');
-      $('.form').animate({
-        'height': panelTwo
-      }, 200);
+   
     });
   
     $('.form-toggle').on('click', function(e) {
@@ -230,9 +219,7 @@ $(document).ready(function() {
       $(this).removeClass('visible');
       $('.form-panel.one').removeClass('hidden');
       $('.form-panel.two').removeClass('active');
-      $('.form').animate({
-        'height': panelOne
-      }, 200);
+    
     });
   });
 

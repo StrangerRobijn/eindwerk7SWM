@@ -872,7 +872,7 @@ background:rgba(74, 79, 106, 0.234);
   left: 50%;
   width: 30px;
   height: 4px;
-  background: #4285F4;
+  background: rgb(199, 214, 238);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -938,7 +938,7 @@ background:rgba(74, 79, 106, 0.234);
 }
 .form-group button {
   outline: none;
-  background: #4285F4;
+  background: $primary;
   width: 100%;
   border: 0;
   border-radius: 4px;
@@ -953,23 +953,7 @@ background:rgba(74, 79, 106, 0.234);
 }
 .two .form-group button {
   background: #FFFFFF;
-  color: #4285F4;
-}
-.form-group .form-remember {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.form-group .form-remember input[type='checkbox'] {
-  display: inline-block;
-  width: auto;
-  margin: 0 10px 0 0;
-}
-.form-group .form-recovery {
-  color: #4285F4;
-  font-size: 12px;
-  text-decoration: none;
+  color: $primary;
 }
 .form-panel {
   padding: 60px calc(5% + 60px) 60px 60px;
@@ -992,7 +976,7 @@ background:rgba(74, 79, 106, 0.234);
   position: absolute;
   top: 0;
   left: 95%;
-  background: #4285F4;
+  background: rgb(201, 201, 201);
   width: 100%;
   min-height: 100%;
   padding: 60px calc(10% + 60px) 60px 60px;
@@ -1033,7 +1017,7 @@ background:rgba(74, 79, 106, 0.234);
 }
 .form-header h1 {
   padding: 4px 0;
-  color: #4285F4;
+  color: $primary;
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1050,21 +1034,4 @@ background:rgba(74, 79, 106, 0.234);
   justify-content: space-between;
   width: 600px;
   margin: 20px auto 100px;
-}
-.pen-footer a {
-  color: #FFFFFF;
-  font-size: 12px;
-  text-decoration: none;
-  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
-}
-.pen-footer a .material-icons {
-  width: 12px;
-  margin: 0 5px;
-  vertical-align: middle;
-  font-size: 12px;
-}
-
-.cp-fab {
-  background: #FFFFFF !important;
-  color: #4285F4 !important;
 }

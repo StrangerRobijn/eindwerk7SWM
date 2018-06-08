@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-include("db_connOFF.php");
+include("db_conn.php");
 
 
 $query = "SELECT * FROM users";
@@ -39,7 +39,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     <body>
     <p>Wij hebben je aanvraag goed ontvangen!</p>
     <p>We bekijken zo spoedig mogelijk je aanvraag na.</p>
-    <p>bedankt om ons te contacteren.</p>
+    <p>Bedankt om ons te contacteren.</p>
     <p><strong>Het Blaster team</strong></p>
     <table>
     <tr>
@@ -63,11 +63,6 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p>Bericht verstuurd</p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
 
 }
  
@@ -234,8 +229,14 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                   <div class="half right cf">
                     <textarea name="message" type="text" id="input-message"  placeholder="Bericht" ></textarea>
                   </div>  
-                  <input type="submit" value="Submit" id="input-submit">
+                  <input type="submit" value="Verzenden" id="input-submit">
                   <br><br>
+                  <?php 
+    if(mail($to,$subject,$message,$headers)){
+        echo "<p>Bericht verstuurd</p>";
+      } else {
+        echo "<p></p>";
+      }?>
                 </form>
 
             </form>
