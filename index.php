@@ -222,7 +222,7 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['subject'])){
                 <h1>Hulp forum</h1>
                 <form class="cf">
                   <div class="half left cf">
-                    <input type="text" id="input-name" name="name" placeholder="<?php echo $_SESSION['username']; ?>" required>
+                    <input type="text" id="input-name" value="<?php echo $_SESSION['username']; ?>" name="name" $ required>
                     <input type="email" id="input-email" name="email" placeholder="Email" required>
                     <input type="text" id="input-subject" name="subject" placeholder="Onderwerp" required>
                   </div>
