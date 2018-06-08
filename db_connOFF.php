@@ -4,7 +4,7 @@
 define("DB_SERVER","localhost");
 define("DB_USER","root");
 define("DB_PASS","");
-define("DB_NAME", "registration");
+define("DB_NAME", "pay");
 
 
 //stap 1: connecteren met de database

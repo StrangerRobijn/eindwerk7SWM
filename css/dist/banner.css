@@ -24,7 +24,7 @@ img{max-width: 100%;}
     height: 100px;
     margin-left: 30%;
     margin-top: -8%;
-    position: absolute;
+    position: relative;
     z-index: -1;
 	background: #374669;
     animation: back 2s linear alternate 1;
@@ -79,7 +79,7 @@ img{max-width: 100%;}
    }
 
    .banner{
-   
+    position: relative;
     animation: banner 1s linear alternate 1;
     animation-fill-mode: forwards;
     animation-delay: 5s;
@@ -124,21 +124,21 @@ img{max-width: 100%;}
     
      transform:  scale(0.1);
    }
-   50% {
+   20% {
      
      transform: scale(0.3);
    }
   
-   60% {
+   40% {
  
      transform: scale(0.5);
    }
-   70% {
+   60% {
  
      transform: scale(0.6);
    }
  
-    85% {
+    80% {
         opacity:1;
      transform: scale(1);
    }
@@ -185,21 +185,21 @@ img{max-width: 100%;}
     
         opacity:1;
    }
-   50% {
+   20% {
      
     opacity:0.8;
    }
   
-   60% {
+   40% {
  
     opacity:0.6;
    }
-   70% {
+   60% {
  
     opacity:0.4;
    }
  
-    85% {
+    80% {
  
         opacity:0.2;
    }

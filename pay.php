@@ -19,12 +19,44 @@ $result = mysqli_query($db, $query);
   }
 ?>
 
-  
-  <?php
-// validatie
-if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
 
-    $_POST['number'] = htmlspecialchars($_POST['number']);
+<?php
+
+if (isset($_POST['numbers']) &&  isset($_POST['email'])  &&  isset($_POST['adres'])  &&  isset($_POST['tele']) ) {
+            
+            $_POST['numbers'] = mysqli_real_escape_string($db, $_POST['numbers']);
+            $_POST['email'] = mysqli_real_escape_string($db, $_POST['email']);
+            $_POST['adres'] = mysqli_real_escape_string($db, $_POST['adres']);
+            $_POST['tele'] = mysqli_real_escape_string($db, $_POST['tele']);
+
+  
+          
+        
+    echo " ";
+    
+    $sql = "INSERT INTO details (numbers, email, adres, tele)
+    VALUES ('{$_POST['numbers']}',  '{$_POST['email']}' , '{$_POST['adres']}' , '{$_POST['tele']}')";
+        
+    if ($result = mysqli_query($db, $sql)) {
+
+        echo " ";
+
+    } else {
+
+   echo "<p>Query kan niet gelezen worden" . mysqli_error($db)."</p>";
+    }       
+} else {  
+    echo "";       
+}
+
+?>
+
+  <?php
+  
+// validatie
+if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
+
+    $_POST['numbers'] = htmlspecialchars($_POST['numbers']);
     $_POST['email'] = htmlspecialchars($_POST['email']);
     $_POST['adres'] = htmlspecialchars($_POST['adres']);
 
@@ -65,8 +97,6 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
 }
  
 ?>
-  
-
 
 
 
@@ -128,7 +158,7 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
     <div class="form-content">
       <form>
         <div class="form-group">
-        <input type="number" name="number" id="number" placeholder="Kaartnummer*" required> 
+        <input type="number" name="numbers" id="numbers" placeholder="Kaartnummer*" required> 
         </div>
         <div class="form-group">
         <input type="text" name="email" id="email" placeholder="E-mail*" required>
@@ -137,44 +167,56 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
         <input type="text" name="adres" id="adres" placeholder="Adres*" required>
         </div>
         <div class="form-group">
-        <input type="number" name="number" id="number" placeholder="Telefoonnummer*" required> 
+        <input type="number" name="tele" id="tele" placeholder="Telefoonnummer*" required> 
         </div>
 
         <div class="form-group">
           <button type="submit">Kopen</button>
-          <?php   if(mail($to,$subject,$message,$headers)){
+          <?php  if(mail($to,$subject,$message,$headers)){
         echo "<p>Er is een bevestigingsmail gestuurd naar ".$_POST["email"]." </p>";
       }?>
+          
       <br>
         </div>
       </form>
     </div>
   </div>
-</form>
 
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+
+
+
   <div class="form-panel two">
     <div class="form-header">
+      <h5>Het is niet mogelijk om met Paypal te betalen wegens onderhoudswerken</h5>
       <h1>PayPal</h1>
     </div>
     <div class="form-content">
       <form>
-        <div class="form-group">
+      <div class="form-group">
         <input type="text" name="email" id="email" placeholder="E-mail*" required>
         </div>
         <div class="form-group">
         <input type="text" name="adres" id="adres" placeholder="Adres*" required>
         </div>
 
-        <div class="form-group">
+       <div class="form-group">
           <button type="submit">Kopen</button>
-        </div>
+          <?php  if(mail($to,$subject,$message,$headers)){
+        echo "<p><strong>Er is een bevestigingsmail gestuurd naar ".$_POST["email"]." </strong> </p>";
+      }?>
+          
+      <br>
+      </div>
       </form>
     </div>
   </div>
-</div>
-</form
-   
+</form>
+
+
+
+
+
+
 </article>
 
 <div class="footer">
@@ -191,14 +233,11 @@ if(isset($_POST['number'])&&isset($_POST['email'])&&isset($_POST['adres'])){
       </div>
 
 </div>
-          <script src="js/dist/main.min.js"></script>
-          <script src="js/src/main.js"></script>
-          <script src="js/dist/modernizr.js"></script> <!-- Modernizr -->
           <script src="js/dist/jquery-2.1.4.js"></script>
-          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+          <script src="js/dist/main.min.js"></script>
 
 
-<!-- DIt wou niet werken in de main.js -->
+<!-- Dit wou niet werken in de main.js -->
 <script>
 
 $(document).ready(function() {

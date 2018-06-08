@@ -36,14 +36,13 @@ if(isset($_POST['email'])){
     <title>GIP</title>
     </head>
     <body>
-    <p>Beste,</p>
+    <p>Beste ".$_SESSION['username']." </p>
     <table>
     <tr>
     <th><h4> Danku voor u aan te melden voor de nieuwsbrief !</h4></th>
     </tr>
     <tr>
      <p> Uw email: ".$_POST["email"]." </p>
-     <p> Uw gebruikersnaam: ".$_POST["username"]." </p>
     </tr>
     </table>
     </body>
@@ -55,11 +54,7 @@ if(isset($_POST['email'])){
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 
-    if(mail($to,$subject,$message,$headers)){
-        echo "<p><strong>mail verstuurd</strong></p>";
-      } else {
-        echo "<p>Fout bij het versturen van e-mail</p>";
-      }
+
   
 }
 
@@ -69,17 +64,16 @@ if(isset($_POST['email'])){
 
 <?php
 
-if (isset($_POST['username']) &&  isset($_POST['email']) ) {
+if (isset($_POST['email']) ) {
             
-            $_POST['username'] = mysqli_real_escape_string($db, $_POST['username']);
-            $_POST['email'] = mysqli_real_escape_string($db, $_POST['email']);
+    $_POST['email'] = mysqli_real_escape_string($db, $_POST['email']);
   
           
         
     echo " ";
     
-    $sql = "INSERT INTO gip_nieuwsbrief (username, email)
-    VALUES ('{$_POST['username']}',  '{$_POST['email']}')";
+    $sql = "INSERT INTO gip_nieuwsbrief (email)
+    VALUES ('{$_POST['email']}')";
         
     if ($result = mysqli_query($db, $sql)) {
 
@@ -136,18 +130,18 @@ if (isset($_POST['username']) &&  isset($_POST['email']) ) {
 <div class="inlog">	 
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
 
-
-   <input type="text" name="username" id="username" placeholder="Gebruikersnaam*" required> <br>
-   <br>
-
+ <h1>Nieuwsbrief</h1>
    
   <input type="text" name="email" id="email" placeholder="E-mail*" required> <br>
-   <br>
 
   <input type="submit" value="Aanmelden voor nieuwsbrief">
+  <?php if(mail($to,$subject,$message,$headers)){
+        echo "<p><strong>Je bent aangemeld voor de nieuwsbrief, check je mails!</strong></p>";
+      }
+      ?>
 
 </form>
-<a href="products.php"><button class="btn btn-primary center-block">Homepagina</button></a>
+<a href="index.php"><button class="btn btn-primary center-block">Homepagina</button></a>
 </div>
 </div>
 </div>

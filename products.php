@@ -166,24 +166,6 @@ function pre_r($array){
 <article>
 
 
-   <div id="section0">
-  
-    <img src="img/standaard_logo_crop.png"> 
-   
-    <?php  if (isset($_SESSION['username'])) : ?>
-
-        <p>Dag <strong><?php echo $_SESSION['username']; ?></strong></p>
-        <p> <a href="index.php?logout='1'" style="color: grey; font-size:1.1em; ">Afmelden</a> </p>
-        
-
-       
-    <?php endif ?>  
-      
- 
-</div>
-
-
-
     <div class="bg"></div>
 
     <div id="section4">
@@ -241,7 +223,7 @@ function pre_r($array){
              <th width="20%">Hoeveelheid</th>  
              <th width="20%">Prijs</th>  
              <th width="15%">Totaal</th>  
-             <th width="5%">Verwijder</th>  
+             <th width="10%">Verwijder</th>  
         </tr>  
 
         <tr>  
@@ -274,7 +256,11 @@ function pre_r($array){
                 if (count($_SESSION['shopping_cart']) > 0):
              ?>
              
-                <a href="pay.php" class="button">Betalen</a>
+             <div id="section6">
+             <a href="pay.php"><button class="btn btn-primary center-block"> Kopen</button></a>
+                </div>
+                
+
              <?php endif; endif; ?>
              
             </td>

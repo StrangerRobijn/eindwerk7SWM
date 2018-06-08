@@ -1,6 +1,11 @@
 
+
+
+
 $('#myModal').modal() 
 
+
+//nav
 
 jQuery(document).ready(function($){
 	var	scrolling = false;
@@ -83,6 +88,7 @@ $('html').mousemove(function(e){
 });
 
 
+
 /*Slide*/
 $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
@@ -98,6 +104,10 @@ $(function() {
       }
     });
   });
+
+
+
+
 
 
   //form
@@ -132,6 +142,10 @@ $(function() {
 
 
 
+
+
+//fade in
+
 $(document).ready(function() {
     
     /* Every time the window is scrolled ... */
@@ -155,6 +169,11 @@ $(document).ready(function() {
     });
     
 });
+
+
+
+
+
 
 
 //parallax effect
@@ -193,6 +212,8 @@ $(window).on('mousemove click', function(e) {
 moveBackground();
 
 
+
+
 $(document).ready(function() {
     var panelOne = $('.form-panel.two').height(),
       panelTwo = $('.form-panel.two')[0].scrollHeight;
@@ -203,9 +224,7 @@ $(document).ready(function() {
       $('.form-toggle').addClass('visible');
       $('.form-panel.one').addClass('hidden');
       $('.form-panel.two').addClass('active');
-      $('.form').animate({
-        'height': panelTwo
-      }, 200);
+   
     });
   
     $('.form-toggle').on('click', function(e) {
@@ -213,8 +232,6 @@ $(document).ready(function() {
       $(this).removeClass('visible');
       $('.form-panel.one').removeClass('hidden');
       $('.form-panel.two').removeClass('active');
-      $('.form').animate({
-        'height': panelOne
-      }, 200);
+    
     });
   });
