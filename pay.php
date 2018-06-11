@@ -233,38 +233,13 @@ if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
       </div>
 
 </div>
-          <script src="js/dist/jquery-2.1.4.js"></script>
           <script src="js/dist/main.min.js"></script>
+          <script src="js/src/main.js"></script>
+          <script src="js/dist/modernizr.js"></script> <!-- Modernizr -->
+          <script src="js/dist/jquery-2.1.4.js"></script>
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 
-
-<!-- Dit wou niet werken in de main.js -->
-<script>
-
-$(document).ready(function() {
-    var panelOne = $('.form-panel.two').height(),
-      panelTwo = $('.form-panel.two')[0].scrollHeight;
-  
-    $('.form-panel.two').not('.form-panel.two.active').on('click', function(e) {
-      e.preventDefault();
-  
-      $('.form-toggle').addClass('visible');
-      $('.form-panel.one').addClass('hidden');
-      $('.form-panel.two').addClass('active');
-   
-    });
-  
-    $('.form-toggle').on('click', function(e) {
-      e.preventDefault();
-      $(this).removeClass('visible');
-      $('.form-panel.one').removeClass('hidden');
-      $('.form-panel.two').removeClass('active');
     
-    });
-  });
-
-  </script>
-
-          
 </body>
 </html>
 

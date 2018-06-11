@@ -188,7 +188,7 @@ function pre_r($array){
                             <img src="<?php echo $product['image']; ?>" class="img-responsive" />
                             <h4 class="text"><?php echo $product['name']; ?></h4>
                             <h5>€ <?php echo $product['price']; ?> </h5>
-                            <input type="text" name="quantity" class="form-control" value="1" />
+                            <input type="number" name="quantity" class="form-control" value="1" />
                             <input type="hidden" name="name" value="<?php echo $product ['name']; ?>" />
                             <input type="hidden" name="price" value="<?php echo $product ['price']; ?>" />
                             <input type="submit" name="add_to_cart" class="btn btn-secondary" value="Kopen" />
@@ -244,7 +244,7 @@ function pre_r($array){
         <tr>  
         
              <td align="right">Totaal bedrag</td>  
-             <td align="right">€ <?php echo number_format($total, 2); ?></td>  
+             <td align="right"><strong>€ <?php echo number_format($total, 2);?></strong></td>  
           
               
         </tr>  
@@ -256,9 +256,9 @@ function pre_r($array){
                 if (count($_SESSION['shopping_cart']) > 0):
              ?>
              
-             <div id="section6">
+         
              <a href="pay.php"><button class="btn btn-primary center-block"> Kopen</button></a>
-                </div>
+              
                 
 
              <?php endif; endif; ?>
