@@ -9,7 +9,7 @@ img{max-width: 100%;}
 
 
 .img{
-    margin-left: 30%;
+    margin-left: 35%;
     position: relative;
     margin-top: 4%;
     width: 40%;
@@ -22,11 +22,11 @@ img{max-width: 100%;}
    .back{
     width: 500px;
     height: 100px;
-    margin-left: 30%;
-    margin-top: -8%;
+    margin-left: 35%;
+    margin-top: -10%;
     position: relative;
     z-index: -1;
-	background: #374669;
+	  background: #374669;
     animation: back 2s linear alternate 1;
     animation-fill-mode: forwards;
     animation-delay: 1s;
@@ -36,10 +36,10 @@ img{max-width: 100%;}
    }
 
   p.text{
-    margin-top:13%;;margin-left: auto;margin-right: auto; color: white;  font-family: 'Josefin Sans', sans-serif;
+    margin-top:11%;;margin-left: auto;margin-right: auto; color: white;  font-family: 'Josefin Sans', sans-serif;
     position: absolute;
     font-size: 5em;
-    padding-left: 14%;
+    padding-left: 23%;
     animation: text 1s linear alternate 1;
     animation-fill-mode: forwards;
     animation-delay: 3s;  
@@ -49,11 +49,11 @@ img{max-width: 100%;}
    }
 
    p.textQ{
-    margin-left:48.5%;;margin-right: auto; color: white;  font-family: 'Josefin Sans', sans-serif;
+    margin-left:44%;;margin-right: auto; color: white;  font-family: 'Josefin Sans', sans-serif;
     position: absolute;
-    margin-top: -5%;
-    font-size: 2.5em;
-    padding-left: 15%;
+    margin-top: -8%;
+    font-size: 2.3em;
+    padding-left: 16%;
     animation: text 1s linear alternate 1;
     animation-fill-mode: forwards;
     animation-delay: 3s;  
@@ -74,7 +74,11 @@ img{max-width: 100%;}
     margin: auto;
     z-index: 1;
     margin-top: 14%;
-    margin-left: 34%;
+    margin-left: 38%;
+    animation: logo 1s linear alternate 1;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+    opacity: 0;
  
    }
 
@@ -82,7 +86,7 @@ img{max-width: 100%;}
     position: relative;
     animation: banner 1s linear alternate 1;
     animation-fill-mode: forwards;
-    animation-delay: 5s;
+    animation-delay: 6s;
        
    }
 
@@ -210,3 +214,35 @@ img{max-width: 100%;}
    }
  }
  
+
+
+
+ @keyframes logo{
+  0% {
+  
+      opacity:0;
+ }
+ 20% {
+   
+  opacity:0.2;
+ }
+
+ 40% {
+
+  opacity:0.4;
+ }
+ 60% {
+
+  opacity:0.6;
+ }
+
+  80% {
+
+      opacity:0.8;
+ }
+
+ 100% {
+  
+  opacity:1;
+ }
+}

@@ -38,7 +38,7 @@ img{max-width: 100%;}
 #section1 img{display: block; margin-left: auto;margin-right: auto; }
 #section1 button{display: block; margin-left: auto;margin-right: auto; margin-top: -5%;position:relative;font-size: 1.5rem;}
 #section2{margin-top: 3.5%;}
-#section3{margin-top: 4%;}
+#section3{margin-top: 4%; }
 #section3 img{margin-bottom: 5%;}
 #section3 .gif{position: relative; margin-left:auto;margin-right: auto;   }
 #section3 .col{position: relative; margin-left:auto;margin-right: auto;margin-top: 14%;}
@@ -50,6 +50,8 @@ img{max-width: 100%;}
 #section5{position: relative; margin-top:10%;margin-right: auto;}
 #section5 button{position: relative; margin-top:20%;margin-right: auto;}
 #section6 button{display: block; margin-left: auto;margin-right: auto; margin-top: 15%;position:relative;font-size: 1.5rem;}
+#section7{background: rgb(240, 240, 240);   border-radius: 5px; margin: 5%;}
+#section7 button{margin-bottom: 10%;}
 
 
 
@@ -65,7 +67,8 @@ h4.text{ font-family: 'Ubuntu', sans-serif;}
   max-width: 32%;
 }
 .table {
-margin: 0 auto; width: 970px; max-width: 100%;
+margin: 0 auto; max-width: 750px; 
+
 
 }
 .row {
@@ -80,10 +83,9 @@ margin: 0 auto;
 background: $primary;
 color:white;
 text-align: center;
-padding: 12px;
+padding: 10%;
 text-decoration: none;
-display: block;
-border-radius: 3px;
+border-radius: 2px;
 font-size: 16px;
 margin: 25px 0 15px 0;
 }
@@ -101,8 +103,9 @@ color: white;
 }
 .btn-danger {
   font-size: 12px;
-  padding: 3px;
+  padding: 8%;
 }
+
 .btn-danger:hover {
   text-decoration: none;
 }
@@ -144,6 +147,8 @@ form {
     color: black; 
     background: $primary;
     cursor: pointer;
+ 
+   
    
    &:hover {
       @include box-shadow(0 1px 1px 1px rgba(#aaa, 0.6)); 
@@ -163,12 +168,8 @@ form {
  margin-bottom: 1em;
 }
 
-.right { width: 50%; }
-
-.left {
-    margin-right: 2%; 
-}
-
+.right{width: 50%;}
+.left{margin-right: 2%;}
 
 @media (max-width: 480px) {
  .half {
@@ -762,7 +763,7 @@ background:rgba(74, 79, 106, 0.234);
   margin: 0px auto;
   padding: 3%;
   margin-top: 7%;
-      border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 .input-group {
   margin: 10px 0px 10px 0px;
@@ -776,13 +777,14 @@ background:rgba(74, 79, 106, 0.234);
 .input-group input {
   border:0; outline:0;
   padding: 1em;
-  border-radius:8px;
+  border-radius:3px;
   display: block;
   background:rgb(242, 242, 242);
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
   margin-top: 1em;
   font-family: 'Merriweather', sans-serif;
+  font-size: 1em;
   
   
 }
@@ -791,18 +793,12 @@ background:rgba(74, 79, 106, 0.234);
   width: 92%; 
   margin: 0px auto; 
   padding: 10px; 
-  border: 1px solid #a94442; 
   color: #a94442; 
   background: #f2dede; 
   border-radius: 5px; 
   text-align: left;
 }
-.success {
-  color: #3c763d; 
-  background: #dff0d8; 
-  border: 1px solid #3c763d;
-  margin-bottom: 20px;
-}
+
 
 .bg {
   width: 100%;

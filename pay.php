@@ -153,7 +153,7 @@ if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
   <div class="form-toggle"></div>
   <div class="form-panel one">
     <div class="form-header">
-      <h1>Bankcontact</h1>
+      <h1>Bancontact</h1>
     </div>
     <div class="form-content">
       <form>
@@ -172,9 +172,14 @@ if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
 
         <div class="form-group">
           <button type="submit">Kopen</button>
+
           <?php  if(mail($to,$subject,$message,$headers)){
         echo "<p>Er is een bevestigingsmail gestuurd naar ".$_POST["email"]." </p>";
+
+        
       }?>
+
+      
           
       <br>
         </div>
@@ -187,7 +192,6 @@ if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
 
   <div class="form-panel two">
     <div class="form-header">
-      <h5>Het is niet mogelijk om met Paypal te betalen wegens onderhoudswerken</h5>
       <h1>PayPal</h1>
     </div>
     <div class="form-content">

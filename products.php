@@ -168,7 +168,7 @@ function pre_r($array){
 
     <div class="bg"></div>
 
-    <div id="section4">
+    <div id="section7">
 
         <?php
         $connect =  mysqli_connect('localhost', 'dekeselr', 'jBsgC3M2', 'dekeselr');
@@ -219,7 +219,7 @@ function pre_r($array){
          <div class="table-responsive">  
         <table class="table">  
         <tr>  
-             <th width="40%">Soort</th>  
+             <th width="30%">Soort</th>  
              <th width="20%">Hoeveelheid</th>  
              <th width="20%">Prijs</th>  
              <th width="15%">Totaal</th>  
@@ -243,8 +243,8 @@ function pre_r($array){
         ?>  
         <tr>  
         
-             <td align="right">Totaal bedrag</td>  
-             <td align="right"><strong>€ <?php echo number_format($total, 2);?></strong></td>  
+             <td align="center">Totaal bedrag</td>  
+             <td align="center">€ <?php echo number_format($total, 2);?></td>  
           
               
         </tr>  
@@ -255,11 +255,8 @@ function pre_r($array){
                 if (isset($_SESSION['shopping_cart'])):
                 if (count($_SESSION['shopping_cart']) > 0):
              ?>
-             
-         
-             <a href="pay.php"><button class="btn btn-primary center-block"> Kopen</button></a>
-              
-                
+            
+            <a href="pay.php"><button class="btn btn-primary center-block" type="submit"> Kopen</button></a>
 
              <?php endif; endif; ?>
              
