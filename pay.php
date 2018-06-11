@@ -138,13 +138,10 @@ if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
 
 <article>
 
-
-    <article>
-
   <div class="bg"></div>
 
 
-
+    <div id="section8">
 
 <!-- Form-->
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
@@ -235,6 +232,7 @@ if(isset($_POST['numbers'])&&isset($_POST['email'])&&isset($_POST['adres'])){
       </div>
       </div>
       </div>
+    </div>
 
 </div>
           <script src="js/dist/main.min.js"></script>

@@ -55,6 +55,22 @@ img{max-width: 100%;}
 
 
 
+@media (max-width: 480px) {
+  .half {
+     width: 100%; 
+     float: none;
+     margin-bottom: 0; 
+  }
+
+  #section8{max-width: 50%;}
+
+  #quote p.qt{padding-top: 14%;font-size:1.4em;}
+#quote p.name{color: rgb(255, 255, 255); font-family: 'Quicksand', sans-serif; font-size: 1em; }
+#section0 { position:fixed;color:white; max-width: 50%;margin:0 auto;padding: 20px; background:rgba(74, 79, 106, 0.234);border-radius: 10px 10px 10px 10px;}
+h1{font-size: 1em;}
+ }
+
+
 .hideme{opacity:0;}
 h4.text{ font-family: 'Ubuntu', sans-serif;}
 
@@ -171,13 +187,7 @@ form {
 .right{width: 50%;}
 .left{margin-right: 2%;}
 
-@media (max-width: 480px) {
- .half {
-    width: 100%; 
-    float: none;
-    margin-bottom: 0; 
- }
-}
+
 
 
 /* Clearfix */
@@ -785,8 +795,6 @@ background:rgba(74, 79, 106, 0.234);
   margin-top: 1em;
   font-family: 'Merriweather', sans-serif;
   font-size: 1em;
-  
-  
 }
 
 .error {
